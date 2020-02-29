@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>从头装一次Macbook pro 2019</title>
+    <url>/2020/02/23/build-new-macbook-pro/</url>
+    <content><![CDATA[<h1 id="我的新电脑装了哪些软件"><a href="#我的新电脑装了哪些软件" class="headerlink" title="我的新电脑装了哪些软件"></a>我的新电脑装了哪些软件</h1><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><ul>
+<li>Chrome<ul>
+<li>登录个人账户,同步插件和设置,密码等信息.</li>
+</ul>
+</li>
+<li>Typro  最好用的markdown编辑器</li>
+<li>搜狗输入发</li>
+<li>V2rayX 你懂得</li>
+<li>Iterm2<ul>
+<li>oh-my-zsh 需要安装苹果自带的工具, 里面含有git</li>
+</ul>
+</li>
+<li>Alfred4.0.4 (原谅我可耻的使用了破解版)<a id="more"></a></li>
+<li>安装Mac 神器 Homebrew<ul>
+<li>git</li>
+<li>git-flow-avh</li>
+<li>maven</li>
+<li>node@12 暂缓</li>
+<li>telnet / wget </li>
+<li>htop</li>
+</ul>
+</li>
+<li>JDK8</li>
+<li>WPS 这个大家都懂, 在mac上的Office 实在是…太难用了</li>
+<li>vs code( Visual Studio Code) <ul>
+<li>Plugin  Chinese Language Pack </li>
+<li>json Tools</li>
+<li>XML tools</li>
+<li>YAML </li>
+</ul>
+</li>
+<li>Intellj </li>
+<li>百度网盘</li>
+<li>Transmit.app (FTP工具)</li>
+<li>IINA 用起来还不错的播放器</li>
+<li>Parallels Desktop for Mac  (没办法, 所在单位必须用windows)<ul>
+<li>安装windows 10 专业版 x64</li>
+</ul>
+</li>
+<li>安装窗口管理软件 SizeUp</li>
+<li>截图软件  “截图” </li>
+<li>印象笔记</li>
+<li>微软TODO</li>
+<li>Bartender for Mac (用于管理导航栏小图标)</li>
+<li>docker <ul>
+<li>修改docker for mac 的镜像下载地址</li>
+</ul>
+</li>
+<li>安装博客软件hexo</li>
+</ul>
+<h3 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h3><ul>
+<li>键盘:<ul>
+<li>系统-&gt;键盘-&gt;重复前延迟 , 调整到合适的时间.</li>
+</ul>
+</li>
+<li>关闭SIP<ul>
+<li>重启电脑.</li>
+<li>开机使用Comand+R进入</li>
+<li>使用terminal 并且执行命令<code>csrutil status</code> 检查SIP状况</li>
+<li><code>System Integrity Protection status: enabled.</code> 或者<code>System Integrity Protection status: disable</code></li>
+<li>执行命令<code>csrutil disable</code> 关闭SIP</li>
+</ul>
+</li>
+<li>允许任何来源软件<ul>
+<li>执行命令<code>sudo spctl --master-disable</code></li>
+</ul>
+</li>
+<li>安装git repository 管理插件. <ul>
+<li><code>npm install projj -g</code></li>
+</ul>
+</li>
+<li>修改iterm2中的vim 配色方案</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vimrc</span></span><br><span class="line"><span class="meta">#</span><span class="bash">编辑一下内容</span></span><br><span class="line">syntax enable</span><br><span class="line">set background=dark</span><br><span class="line">colorscheme Tomorrow-Night</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vim/coclors</span></span><br><span class="line"><span class="meta">#</span><span class="bash">拷贝原有配色方案 Tomorrow-Night.vim 到目录下</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>配置hexo的相关地址</li>
+</ul>
+<h3 id="数据迁移"><a href="#数据迁移" class="headerlink" title="数据迁移"></a>数据迁移</h3><ul>
+<li>maven本地包迁移</li>
+<li>迁移原有代码仓库</li>
+<li>迁移工作用文档</li>
+<li>迁移原有ssh 私钥公钥</li>
+</ul>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>diary</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MongoDB入门教程</title>
+    <url>/2019/03/17/MongoDB%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>突发奇想,想要在家里的笔记本上安装个MongoDB,平时偶尔能用一下来进行测试,既然笔记本上有Docker环境,当然要利用起来了</p>
+<a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin  -d mongo --auth --authenticationDatabase heheda</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用认证方式登录MongoDB <strong>–auth</strong> .</li>
+<li>管理员用户名 <strong>MONGO_INITDB_ROOT_USERNAME</strong> 设置</li>
+<li>管理员用户名密码 <strong>MONGO_INITDB_ROOT_PASSWORD</strong> 设置</li>
+</ul>
+<p>现在你有了一个管理员账户,但是对于不同的数据库,要使用不同的用户,怎么控制呢? </p>
+<p>Let’s get it ,我现在需要一个demo数据库,并且需要一个用户对demo数据库有完全管理权限.用户名和密码就都是demo吧</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; mongo 192.168.123.123:27017/admin -u admin -p admin</span><br><span class="line">&gt; use demo</span><br><span class="line">switched to db demo</span><br><span class="line">&gt; db.createUser(&#123;user:<span class="string">"demo"</span>,<span class="built_in">pwd</span>:<span class="string">"demo"</span>,roles:[&#123;<span class="string">"role"</span>:<span class="string">"dbAdmin"</span>,<span class="string">"db"</span>:<span class="string">"demo"</span>&#125;]&#125;)</span><br><span class="line">Successfully added user: &#123;</span><br><span class="line">	<span class="string">"user"</span> : <span class="string">"demo"</span>,</span><br><span class="line">	<span class="string">"roles"</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"role"</span> : <span class="string">"dbAdmin"</span>,</span><br><span class="line">			<span class="string">"db"</span> : <span class="string">"demo"</span></span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>登录到Docker上的mongo server ,我使用本地装好的mongo client ,<code>use demo</code>选择一个数据库,这样也就是创建了一个数据库,<code>createUser</code>在demo数据库下,创建了一个demo用户,用户名密码都是demo.<code>{&quot;role&quot;:&quot;dbAdmin&quot;,&quot;db&quot;:&quot;demo&quot;}</code> dbAdmin: 数据库管理员,具体有什么权限参照下面</p>
+<ul>
+<li>read:允许用户读取指定数据库 </li>
+<li>readWrite:允许用户读写指定数据库 </li>
+<li>dbAdmin：允许用户在指定数据库中执行管理函数，如索引创建、删除，查看统计或访问system.profile </li>
+<li>userAdmin：允许用户向system.users集合写入，可以找指定数据库里创建、删除和管理用户 </li>
+<li>clusterAdmin：只在admin数据库中可用，赋予用户所有分片和复制集相关函数的管理权限。 </li>
+<li>readAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的读权限 </li>
+<li>readWriteAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的读写权限 </li>
+<li>userAdminAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的userAdmin权限 </li>
+<li>dbAdminAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的dbAdmin权限。 </li>
+<li>root：只在admin数据库中可用。超级账号，超级权限</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>MongoDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Map学习</title>
+    <url>/2018/03/26/Map%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="Map学习手记"><a href="#Map学习手记" class="headerlink" title="Map学习手记"></a>Map学习手记</h1><h2 id="Map结构特性"><a href="#Map结构特性" class="headerlink" title="Map结构特性."></a>Map结构特性.</h2><h2 id="实现类"><a href="#实现类" class="headerlink" title="实现类"></a>实现类</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>HashMap类是基于哈希表的map接口的实现,并且允许使用null键和null值</li>
+<li>HashMap实现了Map并扩展了AbstractMap类,本身并没有增加新的方法</li>
+<li>散列映射不保证元素的顺序,元素加入容器的顺序和读取的顺序可能并不相同,而且<strong>不保证</strong>顺序是<strong>恒久不变</strong>的<h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4></li>
+</ul>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">HapMap();</span><br><span class="line">HapMap(Map m);</span><br><span class="line">HapMap(<span class="keyword">int</span> capacity);</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Constructs an empty &lt;tt&gt;HashMap&lt;/tt&gt; with the specified initial</span></span><br><span class="line"><span class="comment"> * capacity and load factor.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>  initialCapacity the initial capacity   初始化的容量</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>  loadFactor      the load factor  扩展因子  TODO待理解</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> IllegalArgumentException if the initial capacity is negative</span></span><br><span class="line"><span class="comment"> *         or the load factor is nonpositive</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">HapMap(<span class="keyword">int</span> capacity,<span class="keyword">float</span> loadFactor);</span><br></pre></td></tr></table></figure>
+<h4 id="关键函数"><a href="#关键函数" class="headerlink" title="关键函数"></a>关键函数</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">get</span><span class="params">(Object key)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">remove</span><span class="params">(Object key)</span> </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Set&lt;K&gt; <span class="title">keySet</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> Set&lt;Entry&lt;K,V&gt;&gt; <span class="title">entrySet</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p><img src="http://img.yunxf.net/HashMap-put-method.png" alt="hashmap put method"></p>
+]]></content>
+      <categories>
+        <category>JDK</category>
+      </categories>
+      <tags>
+        <tag>JDK</tag>
+        <tag>手记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>设计模式学习一</title>
+    <url>/2018/03/19/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="设计模式模式学习"><a href="#设计模式模式学习" class="headerlink" title="设计模式模式学习"></a>设计模式模式学习</h1><p>//TODO</p>
+<h2 id="设计模式–迭代器模式"><a href="#设计模式–迭代器模式" class="headerlink" title="设计模式–迭代器模式"></a>设计模式–迭代器模式</h2><p>迭代器模式（Iterator），提供一种方法顺序访问一个聚合对象中的各种元素，而又不暴露该对象的内部表示。</p>
+<p>最近在看List/ArrayList/LinkedList,明白了底层的实现方式,就在想,是不是自己可以也模仿写一个简单的ArrayList</p>
+<a id="more"></a>
+<p><img src="http://img.yunxf.net/iterator-img-class.png" alt="类图"></p>
+<h2 id="设计模式–策略模式"><a href="#设计模式–策略模式" class="headerlink" title="设计模式–策略模式"></a>设计模式–策略模式</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><blockquote>
+<p><strong>策略模式</strong>定义了算法族,分别封装起来.让他们之间可以互相替换,这个模式让算法的变化可以独立于使用算法的客户</p>
+</blockquote>
+<p>如果有个简单的需求,有一个鸭子,所有鸭子都是会游泳的,可以叫.可以飞,可以展示自己羽毛的颜色.<br>大家都知道,有一个Duck的抽象类.继承自抽象类的鸭子又可以自定义自己的display()方法来展示自己羽毛的颜色.<br>下面是一个简单的鸭子(Duck)的抽象类.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Duck</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 飞行行为的接口</span></span><br><span class="line"><span class="comment">    * 当符合飞行行为的接口的时候都可以使用不管是坐着火箭飞行,还是扇着翅膀飞行</span></span><br><span class="line"><span class="comment">    **/</span></span><br><span class="line">    <span class="keyword">private</span> FlyBehavior flyBehavior;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 喊叫行为的接口</span></span><br><span class="line"><span class="comment">    * 当符合喊叫行为接口的都可以放进来,不管是gaga 还是吱吱叫</span></span><br><span class="line"><span class="comment">    **/</span></span><br><span class="line">    <span class="keyword">private</span> CallBehavior callBehavior;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Duck</span><span class="params">(FlyBehavior flyBehavior, CallBehavior callBehavior)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.flyBehavior = flyBehavior;</span><br><span class="line">        <span class="keyword">this</span>.callBehavior = callBehavior;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Duck() &#123;</span><br><span class="line">        <span class="keyword">this</span>.flyBehavior = <span class="keyword">new</span> DefaultFlyBehavior();</span><br><span class="line">        <span class="keyword">this</span>.callBehavior = <span class="keyword">new</span> DefaultCallBehavior();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 展示自己</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 可以游泳</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">swim</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Duck can swim"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 飞行的方法,但是具体的实现不知道是谁</span></span><br><span class="line"><span class="comment">     * 在构造方法的时候确定"飞行这个行为是怎么做的;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">fly</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span>  <span class="keyword">this</span>.flyBehavior.fly();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 鸭子叫的行为,但是这个行为不知道具体是怎么喊叫的.</span></span><br><span class="line"><span class="comment">     * 只有在真正的行为实现上才知道</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">call</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.callBehavior.call();</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 在使用中动态的改变飞行的具体实现</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> flyBehavior</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFlyBehavior</span><span class="params">(DefaultFlyBehavior flyBehavior)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.flyBehavior = flyBehavior;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 在鸭子使用中动态的定义鸭子叫声 可能是吱吱 或者嘎嘎</span></span><br><span class="line"><span class="comment">     * 只要是实现了CallBehavior接口的都可以</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> callBehavior</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCallBehavior</span><span class="params">(CallBehavior callBehavior)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.callBehavior = callBehavior;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 黄色的鸭子,这个黄色的鸭子使用默认的飞行(fly)和叫(call)的行为</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YellowDuck</span> <span class="keyword">extends</span> <span class="title">Duck</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">YellowDuck</span><span class="params">(FlyBehavior flyBehavior, CallBehavior callBehavior)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(flyBehavior, callBehavior);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">YellowDuck</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">" I'm a Yellow Duck"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="设计模式–观察者模式"><a href="#设计模式–观察者模式" class="headerlink" title="设计模式–观察者模式"></a>设计模式–观察者模式</h2><h3 id="基本理念"><a href="#基本理念" class="headerlink" title="基本理念"></a>基本理念</h3><ul>
+<li>超出程序中变化的部分,然后将这些和固定不变的部分分离开</li>
+<li>针对接口编程,不针对实现编程</li>
+<li>多用组合少用继承.</li>
+</ul>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>JDK</tag>
+        <tag>手记</tag>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java集合容器</title>
+    <url>/2018/03/16/java%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8/</url>
+    <content><![CDATA[<p>突然发现,每天深陷业务的纠缠中无法自拔,对于Java的基础部分知之甚少.所以开始看看一些java core基础的部分<br>今天来了解一下集合容器</p>
+<a id="more"></a>
+<h1 id="Java集合框架"><a href="#Java集合框架" class="headerlink" title="Java集合框架"></a>Java集合框架</h1><ul>
+<li>用来表示和操作集合的统一的架构,它包含了实现集合的接口与类</li>
+<li>不同的集合类有不同的数据结构,在使用中要根据不同的性能要求,使用不同的集合类</li>
+<li>有哪些接口<ul>
+<li>Iterable 迭代器接口</li>
+<li>Collection 类集合接口</li>
+<li>List 列表接口</li>
+<li>Set 数据集接口</li>
+<li>Queue 对接裂口</li>
+<li>Map 键值对映射表</li>
+</ul>
+</li>
+</ul>
+<h2 id="Iterable-接口"><a href="#Iterable-接口" class="headerlink" title="Iterable 接口"></a>Iterable 接口</h2><ul>
+<li>实现该接口允许对象成为”foreach”语句的目标,也就是该集合允许迭代 </li>
+<li>迭代器是实现了Iterator/ListIterator 接口的类的对象,可以通过遍历类集,访问操作其中的每个元素</li>
+<li>ListIterator 扩展了 Iterator, 允许<strong>双向遍历</strong>集合,并且可以删除和修改元素 </li>
+<li>ListIterator 根据方法发现可以去到上一个元素<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 是否有上一个元素</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">hasPrevious</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 取上一个元素</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function">E <span class="title">previous</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(String it:array) <span class="comment">//循环方式</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="Collection-类集接口"><a href="#Collection-类集接口" class="headerlink" title="Collection 类集接口"></a>Collection 类集接口</h2><ul>
+<li>是Iterable接口的<strong>子接口</strong>,所有类集对象可以访问,但是Map不行.</li>
+<li>存放各种元素.有些是<strong>有序</strong>有些是<strong>无序</strong>的<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 返回一个在一组T类型的元素上进行迭代的迭代器.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">Iteator&lt;T&gt; <span class="title">iterator</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="List-Set-Map"><a href="#List-Set-Map" class="headerlink" title="List/ Set /Map"></a>List/ Set /Map</h2></li>
+<li>List<ul>
+<li>扩展了Collection</li>
+<li>是一个<strong>有序</strong>的容器</li>
+<li>存放的元素是<strong>可重复</strong>的<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ListIterator&lt;E&gt; <span class="title">listIterator</span><span class="params">()</span></span>;<span class="comment">//成为一个可以双向遍历的迭代器对象</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>Set<ul>
+<li>扩展了Collection</li>
+<li>是一个<strong>无序</strong>的容器</li>
+<li>存放的元素是<strong>不可重复</strong>的</li>
+</ul>
+</li>
+<li>Map<ul>
+<li>是一个存储关键字键/值对的对象,可以通过键查询到所对应的值,键和值都可以是对象</li>
+<li>并不是Collection的子接口,所以Map本身不能使用迭代器来进行遍历</li>
+</ul>
+</li>
+</ul>
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ul>
+<li>调用一个无参的构造方法的时候,会在内部调用一个初始大小为<strong>10</strong>的ArrayList对象</li>
+<li>可以添加<strong>null</strong>为容器中的一个元素</li>
+<li>当添加一个元素的时候<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment">* 产生一个新的数组,并且容量是原有数组大小的1.5倍</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">grow</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// overflow-conscious code</span></span><br><span class="line">        <span class="keyword">int</span> oldCapacity = elementData.length;<span class="comment">//当前容器内数组的大小</span></span><br><span class="line">        <span class="keyword">int</span> newCapacity = oldCapacity + (oldCapacity &gt;&gt; <span class="number">1</span>);<span class="comment">//原有容器内数组大小+容器大小右移一位(右移一位可以视为计算除以2)</span></span><br><span class="line">        <span class="keyword">if</span> (newCapacity - minCapacity &lt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = minCapacity;</span><br><span class="line">        <span class="keyword">if</span> (newCapacity - MAX_ARRAY_SIZE &gt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = hugeCapacity(minCapacity);</span><br><span class="line">        <span class="comment">// minCapacity is usually close to size, so this is a win:</span></span><br><span class="line">        elementData = Arrays.copyOf(elementData, newCapacity);<span class="comment">//产生一个新的ArrayList对象,并将原来的元素拷贝到新的集合对象内,新的集合对象容量为原来的1.5倍</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><ul>
+<li>是一个<strong>双向</strong>链表结构 Node节点有一个对于前一个节点的引用,后一个节点的引用<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    E item;</span><br><span class="line">    Node&lt;E&gt; next;</span><br><span class="line">    Node&lt;E&gt; prev;</span><br><span class="line"></span><br><span class="line">    Node(Node&lt;E&gt; prev, E element, Node&lt;E&gt; next) &#123;</span><br><span class="line">        <span class="keyword">this</span>.item = element;</span><br><span class="line">        <span class="keyword">this</span>.next = next;</span><br><span class="line">        <span class="keyword">this</span>.prev = prev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>实现了<strong>Deque</strong>(Double ended Queue 双端队列),继承自<strong>Queue</strong>队列,先进先出.</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JDK</category>
+      </categories>
+      <tags>
+        <tag>JDK</tag>
+        <tag>手记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker添加私有镜像库</title>
+    <url>/2017/07/26/Docker%E6%B7%BB%E5%8A%A0%E7%A7%81%E6%9C%89%E9%95%9C%E5%83%8F%E5%BA%93/</url>
+    <content><![CDATA[<pre><code>因为当初双系统给Linux分配硬盘小了~ 可悲的是镜像沾满了所有硬盘.索性全部全盘全格式化了从新安装了.(没有备份,各种文件找不到)但是发现一个问题.忘了私有镜像库的配制方法...好吧原谅我老了健忘...</code></pre><a id="more"></a>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"je"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//修改这个文件.</span><br><span class="line">$ /etc/defaults/docker</span><br><span class="line">DOCKER_OPTS=<span class="string">"<span class="variable">$DOCKER_OPTS</span> --registry-mirror=registry.domain.org"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">registry.domain.org/elk/elasticsearch:latest</span><br><span class="line">Error response from daemon: invalid registry endpoint https://registry.domain.org/v0/: unable to ping registry endpoint https://registry.domain.org/v0/</span><br><span class="line">v2 ping attempt failed with error: Get https://registry.domain.org/v2/: x509: certificate signed by unknown authority</span><br><span class="line">v1 ping attempt failed with error: Get https://registry.domain.org/v1/_ping: x509: certificate signed by unknown authority. If this private registry supports only HTTP or HTTPS with an unknown CA certificate, please add `--insecure-registry registry.domain.org` to the daemon<span class="string">'s arguments. In the case of HTTPS, if you have access to the registry'</span>s CA certificate, no need <span class="keyword">for</span> the flag; simply place the CA certificate at /etc/docker/certs.d/registry.domain.org/ca.crt</span><br></pre></td></tr></table></figure>
+
+
+<p>上面写的很明白了~ https~ 但是我没有证书.翻箱倒柜.终于找到当初生成的证书…但是需要放在/etc/docker/certs.d/registry.domain.org/目录下的 ca.crt文件<br>这里貌似必须用 root 用户新建这个文件.然后拷贝你的证书内容进去,别问我为什么.我也不知道…</p>
+<p>捂脸望天</p>
+]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>DevOps</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nginx小记</title>
+    <url>/2017/07/26/Nginx%E5%B0%8F%E8%AE%B0/</url>
+    <content><![CDATA[<p>闲来无聊看看 Nginx .</p>
+<ul>
+<li>操作系统: Ubuntu 14.04</li>
+<li>安装方式: Build source</li>
+<li>安装之前使用./configure 检查是否可以进行安装是否缺少模块</li>
+</ul>
+<a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/nginx --with-http_ssl_module --with-http_spdy_module --with-http_stub_status_module --with-pcre</span><br></pre></td></tr></table></figure>
+<p>发生错误:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./configure: error: the HTTP rewrite module requires the PCRE library.</span><br></pre></td></tr></table></figure>
+<p>解决办法:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install libpcre3 libpcre3-dev</span><br></pre></td></tr></table></figure>
+
+<p>然后继续执行./configure 的命令 发现又少东西了~  这次是 openssl</p>
+<p>发生错误:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./configure: error: SSL modules require the OpenSSL library.</span><br></pre></td></tr></table></figure>
+<p>解决办法:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install openssl libssl-dev</span><br></pre></td></tr></table></figure>
+<p>然后继续./configure </p>
+<p>OK 搞定了~  安装吧~</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ make </span><br><span class="line">$ make install</span><br></pre></td></tr></table></figure>
+<p>nginx.conf 配置<br>需求:是想让 nginx 反向代理到本机 node express 启动的一个web 程序上但是想让在解析的时候浏览器输入 localhost8081/express 解析解析到localhost:3000上.</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen       8081;//监听本机8081端口</span><br><span class="line">        server_name  yun.he.he;//编辑本机 hosts 127.0.0.1解析到 yun.he.he 域名</span><br><span class="line">        #root /data/www/yun; //反向代理后没用</span><br><span class="line">        location /express/ &#123; //解析url 中的/express</span><br><span class="line">	    rewrite /express/(.*) /$1 break;  //重写路径  $1代表前面 小括号内的内容 并且/ express 不进行转发</span><br><span class="line">            proxy_pass http://10.32.43.42:3000;//讲上面的地址转发到这个 url</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>手记</tag>
+        <tag>Nginx</tag>
+      </tags>
+  </entry>
+</search>
