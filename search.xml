@@ -54,11 +54,13 @@
 <li>安装博客软件hexo</li>
 </ul>
 <h3 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h3><ul>
-<li>键盘:<ul>
+<li><p>键盘:</p>
+<ul>
 <li>系统-&gt;键盘-&gt;重复前延迟 , 调整到合适的时间.</li>
 </ul>
 </li>
-<li>关闭SIP<ul>
+<li><p>关闭SIP</p>
+<ul>
 <li>重启电脑.</li>
 <li>开机使用Comand+R进入</li>
 <li>使用terminal 并且执行命令<code>csrutil status</code> 检查SIP状况</li>
@@ -66,20 +68,25 @@
 <li>执行命令<code>csrutil disable</code> 关闭SIP</li>
 </ul>
 </li>
-<li>允许任何来源软件<ul>
+<li><p>允许任何来源软件</p>
+<ul>
 <li>执行命令<code>sudo spctl --master-disable</code></li>
 </ul>
 </li>
-<li>安装git repository 管理插件. <ul>
+<li><p>安装git repository 管理插件. </p>
+<ul>
 <li><code>npm install projj -g</code></li>
 </ul>
 </li>
-<li>修改iterm2中的vim 配色方案</li>
-</ul>
+<li><p>修改iterm2中的vim 配色方案</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vimrc</span></span><br><span class="line"><span class="meta">#</span><span class="bash">编辑一下内容</span></span><br><span class="line">syntax enable</span><br><span class="line">set background=dark</span><br><span class="line">colorscheme Tomorrow-Night</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vim/coclors</span></span><br><span class="line"><span class="meta">#</span><span class="bash">拷贝原有配色方案 Tomorrow-Night.vim 到目录下</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置hexo的相关地址</p>
+</li>
+<li><p>设置Mac Dock 隐藏/显示的时间延迟,默认将鼠标移动到Dock位置会有一定时间的延迟.</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.Dock autohide-delay -float 0 &amp;&amp; killall Dock</span><br><span class="line"><span class="meta">#</span><span class="bash">如果想要恢复</span></span><br><span class="line">defaults delete com.apple.Dock autohide-delay &amp;&amp; killall Dock</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>配置hexo的相关地址</li>
+</li>
 </ul>
 <h3 id="数据迁移"><a href="#数据迁移" class="headerlink" title="数据迁移"></a>数据迁移</h3><ul>
 <li>maven本地包迁移</li>
@@ -149,8 +156,8 @@
         <category>JDK</category>
       </categories>
       <tags>
-        <tag>JDK</tag>
         <tag>手记</tag>
+        <tag>JDK</tag>
       </tags>
   </entry>
   <entry>
@@ -177,8 +184,8 @@
         <category>设计模式</category>
       </categories>
       <tags>
-        <tag>JDK</tag>
         <tag>手记</tag>
+        <tag>JDK</tag>
         <tag>设计模式</tag>
       </tags>
   </entry>
@@ -247,8 +254,8 @@
         <category>JDK</category>
       </categories>
       <tags>
-        <tag>JDK</tag>
         <tag>手记</tag>
+        <tag>JDK</tag>
       </tags>
   </entry>
   <entry>
@@ -303,8 +310,8 @@
         <category>服务器</category>
       </categories>
       <tags>
-        <tag>手记</tag>
         <tag>Nginx</tag>
+        <tag>手记</tag>
       </tags>
   </entry>
 </search>
