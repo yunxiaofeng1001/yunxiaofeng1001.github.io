@@ -193,6 +193,130 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.yunxf.me/2020/03/29/graphQL-initialize/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="YunXF">
+      <meta itemprop="description" content="技术,生活的更新">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YunXF的BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/29/graphQL-initialize/" class="post-title-link" itemprop="url">GraphQL的探索上手</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-03-29 17:55:06 / 修改时间：17:59:15" itemprop="dateCreated datePublished" datetime="2020-03-29T17:55:06+08:00">2020-03-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/03/29/graphQL-initialize/" class="post-meta-item leancloud_visitors" data-flag-title="GraphQL的探索上手" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/03/29/graphQL-initialize/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/29/graphQL-initialize/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="一-GraphQL简介"><a href="#一-GraphQL简介" class="headerlink" title="一 GraphQL简介"></a>一 GraphQL简介</h3><ol>
+<li><h4 id="GraphQL是什么"><a href="#GraphQL是什么" class="headerlink" title="GraphQL是什么"></a>GraphQL是什么</h4></li>
+</ol>
+<p><strong>为API而生的专用查询语言</strong></p>
+<blockquote>
+<p>GraphQL是一门为API和运行时而生的查询语言。它可以使用您已有的数据对这些查询进行填充。 GraphQL在您的API中，提供了一个完整的，易于理解的数据描述， 可以给予您的客户端一个权利，可以精确地描述他们所需要的数据，并不拖泥带水。 随着时间的推移，使得API的进化更加容易，并且开启强大的开发者工具</p>
+</blockquote>
+<ol start="2">
+<li><h4 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h4></li>
+</ol>
+<p>当提起API设计的时候，大家通常会想到SOAP，RESTful等设计方式，从2000年RESTful的理论被提出的时候，在业界引起了很大反响，因为这种设计理念更易于用户的使用，所以便很快的被大家所接受。我们知道REST是一种从服务器公开数据的流行方式。当REST的概念被提及出来时，客户端应用程序对数据的需求相对简单，而开发的速度并没有达到今天的水平。因此REST对于许多应用程序来说是非常适合的。然而在业务越发复杂，客户对系统的扩展性有了更高的要求时，API环境发生了巨大的变化。特别是从下面三个方面在挑战api设计的方式:</p>
+<ul>
+<li>移动端用户的爆发式增长需要更高效的数据加载**</li>
+</ul>
+<blockquote>
+<p>Facebook开发GraphQL的最初原因是移动用户的增加、低功耗设备和松散的网络。GraphQL最小化了需要网络传输的数据量，从而极大地改善了在这些条件下运行的应用程序。</p>
+</blockquote>
+<ul>
+<li><strong>各种不同的前端框架和平台</strong></li>
+</ul>
+<blockquote>
+<p>前端框架和平台运行客户端应用程序的异构环境使得我们在构建和维护一个符合所有需求的API变得困难，使用GraphQL每个客户机都可以精确地访问它需要的数据。</p>
+</blockquote>
+<ul>
+<li><strong>在不同前端框架，不同平台下想要加快产品快速开发变的越来越难</strong></li>
+</ul>
+<blockquote>
+<p>持续部署已经成为许多公司的标准，快速的迭代和频繁的产品更新是必不可少的。对于REST api，服务器公开数据的方式常常需要修改，以满足客户端的特定需求和设计更改。这阻碍了快速开发实践和产品迭代。</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/29/graphQL-initialize/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.yunxf.me/2020/02/23/build-new-macbook-pro/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -995,20 +1119,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
