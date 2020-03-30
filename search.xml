@@ -291,8 +291,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>Docker</tag>
         <tag>MongoDB</tag>
+        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
@@ -312,8 +312,8 @@
         <category>JDK</category>
       </categories>
       <tags>
-        <tag>JDK</tag>
         <tag>手记</tag>
+        <tag>JDK</tag>
       </tags>
   </entry>
   <entry>
@@ -340,8 +340,8 @@
         <category>设计模式</category>
       </categories>
       <tags>
-        <tag>JDK</tag>
         <tag>手记</tag>
+        <tag>JDK</tag>
         <tag>设计模式</tag>
       </tags>
   </entry>
@@ -410,8 +410,8 @@
         <category>JDK</category>
       </categories>
       <tags>
-        <tag>JDK</tag>
         <tag>手记</tag>
+        <tag>JDK</tag>
       </tags>
   </entry>
   <entry>
@@ -466,8 +466,8 @@
         <category>服务器</category>
       </categories>
       <tags>
-        <tag>手记</tag>
         <tag>Nginx</tag>
+        <tag>手记</tag>
       </tags>
   </entry>
 </search>

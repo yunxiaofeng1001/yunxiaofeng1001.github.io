@@ -27,8 +27,8 @@
 <meta property="article:published_time" content="2019-03-17T09:43:29.000Z">
 <meta property="article:modified_time" content="2020-02-29T14:07:25.326Z">
 <meta property="article:author" content="YunXF">
-<meta property="article:tag" content="Docker">
 <meta property="article:tag" content="MongoDB">
+<meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://www.yunxf.me/2019/03/17/MongoDB%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">
@@ -306,8 +306,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
               <a href="/tags/MongoDB/" rel="tag"><i class="fa fa-tag"></i> MongoDB</a>
+              <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
           </div>
 
         
@@ -491,9 +491,14 @@
                 console.error('Failed to save visitor count', error);
               })
           } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
           }
         })
         .catch(error => {
