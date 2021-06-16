@@ -130,13 +130,6 @@
   </url>
   
   <url>
-    <loc>http://www.yunxf.me/tags/diary/</loc>
-    <lastmod>2021-06-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.yunxf.me/tags/Spring-boot/</loc>
     <lastmod>2021-06-16</lastmod>
     <changefreq>daily</changefreq>
@@ -145,6 +138,13 @@
   
   <url>
     <loc>http://www.yunxf.me/tags/GraphQL/</loc>
+    <lastmod>2021-06-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.yunxf.me/tags/diary/</loc>
     <lastmod>2021-06-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -188,14 +188,14 @@
   </url>
   
   <url>
-    <loc>http://www.yunxf.me/categories/life/</loc>
+    <loc>http://www.yunxf.me/categories/server/</loc>
     <lastmod>2021-06-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://www.yunxf.me/categories/server/</loc>
+    <loc>http://www.yunxf.me/categories/life/</loc>
     <lastmod>2021-06-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

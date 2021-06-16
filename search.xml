@@ -117,105 +117,6 @@
       </tags>
   </entry>
   <entry>
-    <title>从头装一次Macbook pro 2019</title>
-    <url>/2020/02/23/build-new-macbook-pro/</url>
-    <content><![CDATA[<h1 id="我的新电脑装了哪些软件"><a href="#我的新电脑装了哪些软件" class="headerlink" title="我的新电脑装了哪些软件"></a>我的新电脑装了哪些软件</h1><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><ul>
-<li>Chrome<ul>
-<li>登录个人账户,同步插件和设置,密码等信息.</li>
-</ul>
-</li>
-<li>Typro  最好用的markdown编辑器</li>
-<li>搜狗输入发</li>
-<li>V2rayX 你懂得</li>
-<li>Iterm2<ul>
-<li>oh-my-zsh 需要安装苹果自带的工具, 里面含有git</li>
-</ul>
-</li>
-<li>Alfred4.0.4 (原谅我可耻的使用了破解版)<span id="more"></span></li>
-<li>安装Mac 神器 Homebrew<ul>
-<li>git</li>
-<li>git-flow-avh</li>
-<li>maven</li>
-<li>node@12 暂缓</li>
-<li>telnet / wget </li>
-<li>htop</li>
-</ul>
-</li>
-<li>JDK8</li>
-<li>WPS 这个大家都懂, 在mac上的Office 实在是…太难用了</li>
-<li>vs code( Visual Studio Code) <ul>
-<li>Plugin  Chinese Language Pack </li>
-<li>json Tools</li>
-<li>XML tools</li>
-<li>YAML </li>
-</ul>
-</li>
-<li>Intellj </li>
-<li>百度网盘</li>
-<li>Transmit.app (FTP工具)</li>
-<li>IINA 用起来还不错的播放器</li>
-<li>Parallels Desktop for Mac  (没办法, 所在单位必须用windows)<ul>
-<li>安装windows 10 专业版 x64</li>
-</ul>
-</li>
-<li>安装窗口管理软件 SizeUp</li>
-<li>截图软件  “截图” </li>
-<li>印象笔记</li>
-<li>微软TODO</li>
-<li>Bartender for Mac (用于管理导航栏小图标)</li>
-<li>docker <ul>
-<li>修改docker for mac 的镜像下载地址</li>
-</ul>
-</li>
-<li>安装博客软件hexo</li>
-</ul>
-<h3 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h3><ul>
-<li><p>键盘:</p>
-<ul>
-<li>系统-&gt;键盘-&gt;重复前延迟 , 调整到合适的时间.</li>
-</ul>
-</li>
-<li><p>关闭SIP</p>
-<ul>
-<li>重启电脑.</li>
-<li>开机使用Comand+R进入</li>
-<li>使用terminal 并且执行命令<code>csrutil status</code> 检查SIP状况</li>
-<li><code>System Integrity Protection status: enabled.</code> 或者<code>System Integrity Protection status: disable</code></li>
-<li>执行命令<code>csrutil disable</code> 关闭SIP</li>
-</ul>
-</li>
-<li><p>允许任何来源软件</p>
-<ul>
-<li>执行命令<code>sudo spctl --master-disable</code></li>
-</ul>
-</li>
-<li><p>安装git repository 管理插件. </p>
-<ul>
-<li><code>npm install projj -g</code></li>
-</ul>
-</li>
-<li><p>修改iterm2中的vim 配色方案</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vimrc</span></span><br><span class="line"><span class="meta">#</span><span class="bash">编辑一下内容</span></span><br><span class="line">syntax enable</span><br><span class="line">set background=dark</span><br><span class="line">colorscheme Tomorrow-Night</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vim/coclors</span></span><br><span class="line"><span class="meta">#</span><span class="bash">拷贝原有配色方案 Tomorrow-Night.vim 到目录下</span></span><br></pre></td></tr></table></figure></li>
-<li><p>配置hexo的相关地址</p>
-</li>
-<li><p>设置Mac Dock 隐藏/显示的时间延迟,默认将鼠标移动到Dock位置会有一定时间的延迟.</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.Dock autohide-delay -float 0 &amp;&amp; killall Dock</span><br><span class="line"><span class="meta">#</span><span class="bash">如果想要恢复</span></span><br><span class="line">defaults delete com.apple.Dock autohide-delay &amp;&amp; killall Dock</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="数据迁移"><a href="#数据迁移" class="headerlink" title="数据迁移"></a>数据迁移</h3><ul>
-<li>maven本地包迁移</li>
-<li>迁移原有代码仓库</li>
-<li>迁移工作用文档</li>
-<li>迁移原有ssh 私钥公钥</li>
-</ul>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>diary</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GraphQL的探索上手</title>
     <url>/2020/03/29/graphQL-initialize/</url>
     <content><![CDATA[<h3 id="一-GraphQL简介"><a href="#一-GraphQL简介" class="headerlink" title="一 GraphQL简介"></a>一 GraphQL简介</h3><ol>
@@ -369,6 +270,105 @@
       <tags>
         <tag>Spring boot</tag>
         <tag>GraphQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从头装一次Macbook pro 2019</title>
+    <url>/2020/02/23/build-new-macbook-pro/</url>
+    <content><![CDATA[<h1 id="我的新电脑装了哪些软件"><a href="#我的新电脑装了哪些软件" class="headerlink" title="我的新电脑装了哪些软件"></a>我的新电脑装了哪些软件</h1><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><ul>
+<li>Chrome<ul>
+<li>登录个人账户,同步插件和设置,密码等信息.</li>
+</ul>
+</li>
+<li>Typro  最好用的markdown编辑器</li>
+<li>搜狗输入发</li>
+<li>V2rayX 你懂得</li>
+<li>Iterm2<ul>
+<li>oh-my-zsh 需要安装苹果自带的工具, 里面含有git</li>
+</ul>
+</li>
+<li>Alfred4.0.4 (原谅我可耻的使用了破解版)<span id="more"></span></li>
+<li>安装Mac 神器 Homebrew<ul>
+<li>git</li>
+<li>git-flow-avh</li>
+<li>maven</li>
+<li>node@12 暂缓</li>
+<li>telnet / wget </li>
+<li>htop</li>
+</ul>
+</li>
+<li>JDK8</li>
+<li>WPS 这个大家都懂, 在mac上的Office 实在是…太难用了</li>
+<li>vs code( Visual Studio Code) <ul>
+<li>Plugin  Chinese Language Pack </li>
+<li>json Tools</li>
+<li>XML tools</li>
+<li>YAML </li>
+</ul>
+</li>
+<li>Intellj </li>
+<li>百度网盘</li>
+<li>Transmit.app (FTP工具)</li>
+<li>IINA 用起来还不错的播放器</li>
+<li>Parallels Desktop for Mac  (没办法, 所在单位必须用windows)<ul>
+<li>安装windows 10 专业版 x64</li>
+</ul>
+</li>
+<li>安装窗口管理软件 SizeUp</li>
+<li>截图软件  “截图” </li>
+<li>印象笔记</li>
+<li>微软TODO</li>
+<li>Bartender for Mac (用于管理导航栏小图标)</li>
+<li>docker <ul>
+<li>修改docker for mac 的镜像下载地址</li>
+</ul>
+</li>
+<li>安装博客软件hexo</li>
+</ul>
+<h3 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h3><ul>
+<li><p>键盘:</p>
+<ul>
+<li>系统-&gt;键盘-&gt;重复前延迟 , 调整到合适的时间.</li>
+</ul>
+</li>
+<li><p>关闭SIP</p>
+<ul>
+<li>重启电脑.</li>
+<li>开机使用Comand+R进入</li>
+<li>使用terminal 并且执行命令<code>csrutil status</code> 检查SIP状况</li>
+<li><code>System Integrity Protection status: enabled.</code> 或者<code>System Integrity Protection status: disable</code></li>
+<li>执行命令<code>csrutil disable</code> 关闭SIP</li>
+</ul>
+</li>
+<li><p>允许任何来源软件</p>
+<ul>
+<li>执行命令<code>sudo spctl --master-disable</code></li>
+</ul>
+</li>
+<li><p>安装git repository 管理插件. </p>
+<ul>
+<li><code>npm install projj -g</code></li>
+</ul>
+</li>
+<li><p>修改iterm2中的vim 配色方案</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vimrc</span></span><br><span class="line"><span class="meta">#</span><span class="bash">编辑一下内容</span></span><br><span class="line">syntax enable</span><br><span class="line">set background=dark</span><br><span class="line">colorscheme Tomorrow-Night</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vim/coclors</span></span><br><span class="line"><span class="meta">#</span><span class="bash">拷贝原有配色方案 Tomorrow-Night.vim 到目录下</span></span><br></pre></td></tr></table></figure></li>
+<li><p>配置hexo的相关地址</p>
+</li>
+<li><p>设置Mac Dock 隐藏/显示的时间延迟,默认将鼠标移动到Dock位置会有一定时间的延迟.</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.Dock autohide-delay -float 0 &amp;&amp; killall Dock</span><br><span class="line"><span class="meta">#</span><span class="bash">如果想要恢复</span></span><br><span class="line">defaults delete com.apple.Dock autohide-delay &amp;&amp; killall Dock</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="数据迁移"><a href="#数据迁移" class="headerlink" title="数据迁移"></a>数据迁移</h3><ul>
+<li>maven本地包迁移</li>
+<li>迁移原有代码仓库</li>
+<li>迁移工作用文档</li>
+<li>迁移原有ssh 私钥公钥</li>
+</ul>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>diary</tag>
       </tags>
   </entry>
   <entry>
