@@ -24,6 +24,27 @@
       </tags>
   </entry>
   <entry>
+    <title>Map学习</title>
+    <url>/2018/03/26/Map%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="Map学习手记"><a href="#Map学习手记" class="headerlink" title="Map学习手记"></a>Map学习手记</h1><h2 id="Map结构特性"><a href="#Map结构特性" class="headerlink" title="Map结构特性."></a>Map结构特性.</h2><h2 id="实现类"><a href="#实现类" class="headerlink" title="实现类"></a>实现类</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>HashMap类是基于哈希表的map接口的实现,并且允许使用null键和null值</li>
+<li>HashMap实现了Map并扩展了AbstractMap类,本身并没有增加新的方法</li>
+<li>散列映射不保证元素的顺序,元素加入容器的顺序和读取的顺序可能并不相同,而且<strong>不保证</strong>顺序是<strong>恒久不变</strong>的<h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4></li>
+</ul>
+<span id="more"></span>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">HapMap();</span><br><span class="line">HapMap(Map m);</span><br><span class="line">HapMap(<span class="keyword">int</span> capacity);</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Constructs an empty &lt;tt&gt;HashMap&lt;/tt&gt; with the specified initial</span></span><br><span class="line"><span class="comment"> * capacity and load factor.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>  initialCapacity the initial capacity   初始化的容量</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>  loadFactor      the load factor  扩展因子  TODO待理解</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> IllegalArgumentException if the initial capacity is negative</span></span><br><span class="line"><span class="comment"> *         or the load factor is nonpositive</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">HapMap(<span class="keyword">int</span> capacity,<span class="keyword">float</span> loadFactor);</span><br></pre></td></tr></table></figure>
+<h4 id="关键函数"><a href="#关键函数" class="headerlink" title="关键函数"></a>关键函数</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">get</span><span class="params">(Object key)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">remove</span><span class="params">(Object key)</span> </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Set&lt;K&gt; <span class="title">keySet</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> Set&lt;Entry&lt;K,V&gt;&gt; <span class="title">entrySet</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p><img src="http://img.yunxf.net/HashMap-put-method.png" alt="hashmap put method"></p>
+]]></content>
+      <categories>
+        <category>JDK</category>
+      </categories>
+      <tags>
+        <tag>JDK</tag>
+        <tag>手记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MongoDB入门教程</title>
     <url>/2019/03/17/MongoDB%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<p>突发奇想,想要在家里的笔记本上安装个MongoDB,平时偶尔能用一下来进行测试,既然笔记本上有Docker环境,当然要利用起来了</p>
@@ -58,27 +79,6 @@
       <tags>
         <tag>Docker</tag>
         <tag>MongoDB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Map学习</title>
-    <url>/2018/03/26/Map%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="Map学习手记"><a href="#Map学习手记" class="headerlink" title="Map学习手记"></a>Map学习手记</h1><h2 id="Map结构特性"><a href="#Map结构特性" class="headerlink" title="Map结构特性."></a>Map结构特性.</h2><h2 id="实现类"><a href="#实现类" class="headerlink" title="实现类"></a>实现类</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
-<li>HashMap类是基于哈希表的map接口的实现,并且允许使用null键和null值</li>
-<li>HashMap实现了Map并扩展了AbstractMap类,本身并没有增加新的方法</li>
-<li>散列映射不保证元素的顺序,元素加入容器的顺序和读取的顺序可能并不相同,而且<strong>不保证</strong>顺序是<strong>恒久不变</strong>的<h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4></li>
-</ul>
-<span id="more"></span>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">HapMap();</span><br><span class="line">HapMap(Map m);</span><br><span class="line">HapMap(<span class="keyword">int</span> capacity);</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Constructs an empty &lt;tt&gt;HashMap&lt;/tt&gt; with the specified initial</span></span><br><span class="line"><span class="comment"> * capacity and load factor.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>  initialCapacity the initial capacity   初始化的容量</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>  loadFactor      the load factor  扩展因子  TODO待理解</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> IllegalArgumentException if the initial capacity is negative</span></span><br><span class="line"><span class="comment"> *         or the load factor is nonpositive</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">HapMap(<span class="keyword">int</span> capacity,<span class="keyword">float</span> loadFactor);</span><br></pre></td></tr></table></figure>
-<h4 id="关键函数"><a href="#关键函数" class="headerlink" title="关键函数"></a>关键函数</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">get</span><span class="params">(Object key)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">remove</span><span class="params">(Object key)</span> </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Set&lt;K&gt; <span class="title">keySet</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> Set&lt;Entry&lt;K,V&gt;&gt; <span class="title">entrySet</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-<p><img src="http://img.yunxf.net/HashMap-put-method.png" alt="hashmap put method"></p>
-]]></content>
-      <categories>
-        <category>JDK</category>
-      </categories>
-      <tags>
-        <tag>JDK</tag>
-        <tag>手记</tag>
       </tags>
   </entry>
   <entry>
@@ -213,72 +213,6 @@
       </categories>
       <tags>
         <tag>diary</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java集合容器</title>
-    <url>/2018/03/16/java%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8/</url>
-    <content><![CDATA[<p>突然发现,每天深陷业务的纠缠中无法自拔,对于Java的基础部分知之甚少.所以开始看看一些java core基础的部分<br>今天来了解一下集合容器</p>
-<span id="more"></span>
-<h1 id="Java集合框架"><a href="#Java集合框架" class="headerlink" title="Java集合框架"></a>Java集合框架</h1><ul>
-<li>用来表示和操作集合的统一的架构,它包含了实现集合的接口与类</li>
-<li>不同的集合类有不同的数据结构,在使用中要根据不同的性能要求,使用不同的集合类</li>
-<li>有哪些接口<ul>
-<li>Iterable 迭代器接口</li>
-<li>Collection 类集合接口</li>
-<li>List 列表接口</li>
-<li>Set 数据集接口</li>
-<li>Queue 对接裂口</li>
-<li>Map 键值对映射表</li>
-</ul>
-</li>
-</ul>
-<h2 id="Iterable-接口"><a href="#Iterable-接口" class="headerlink" title="Iterable 接口"></a>Iterable 接口</h2><ul>
-<li>实现该接口允许对象成为”foreach”语句的目标,也就是该集合允许迭代 </li>
-<li>迭代器是实现了Iterator/ListIterator 接口的类的对象,可以通过遍历类集,访问操作其中的每个元素</li>
-<li>ListIterator 扩展了 Iterator, 允许<strong>双向遍历</strong>集合,并且可以删除和修改元素 </li>
-<li>ListIterator 根据方法发现可以去到上一个元素<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 是否有上一个元素</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">hasPrevious</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 取上一个元素</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function">E <span class="title">previous</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(String it:array) <span class="comment">//循环方式</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<hr>
-<h2 id="Collection-类集接口"><a href="#Collection-类集接口" class="headerlink" title="Collection 类集接口"></a>Collection 类集接口</h2><ul>
-<li>是Iterable接口的<strong>子接口</strong>,所有类集对象可以访问,但是Map不行.</li>
-<li>存放各种元素.有些是<strong>有序</strong>有些是<strong>无序</strong>的<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 返回一个在一组T类型的元素上进行迭代的迭代器.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">Iteator&lt;T&gt; <span class="title">iterator</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="List-Set-Map"><a href="#List-Set-Map" class="headerlink" title="List/ Set /Map"></a>List/ Set /Map</h2></li>
-<li>List<ul>
-<li>扩展了Collection</li>
-<li>是一个<strong>有序</strong>的容器</li>
-<li>存放的元素是<strong>可重复</strong>的<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ListIterator&lt;E&gt; <span class="title">listIterator</span><span class="params">()</span></span>;<span class="comment">//成为一个可以双向遍历的迭代器对象</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>Set<ul>
-<li>扩展了Collection</li>
-<li>是一个<strong>无序</strong>的容器</li>
-<li>存放的元素是<strong>不可重复</strong>的</li>
-</ul>
-</li>
-<li>Map<ul>
-<li>是一个存储关键字键/值对的对象,可以通过键查询到所对应的值,键和值都可以是对象</li>
-<li>并不是Collection的子接口,所以Map本身不能使用迭代器来进行遍历</li>
-</ul>
-</li>
-</ul>
-<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ul>
-<li>调用一个无参的构造方法的时候,会在内部调用一个初始大小为<strong>10</strong>的ArrayList对象</li>
-<li>可以添加<strong>null</strong>为容器中的一个元素</li>
-<li>当添加一个元素的时候<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment">* 产生一个新的数组,并且容量是原有数组大小的1.5倍</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">grow</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// overflow-conscious code</span></span><br><span class="line">        <span class="keyword">int</span> oldCapacity = elementData.length;<span class="comment">//当前容器内数组的大小</span></span><br><span class="line">        <span class="keyword">int</span> newCapacity = oldCapacity + (oldCapacity &gt;&gt; <span class="number">1</span>);<span class="comment">//原有容器内数组大小+容器大小右移一位(右移一位可以视为计算除以2)</span></span><br><span class="line">        <span class="keyword">if</span> (newCapacity - minCapacity &lt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = minCapacity;</span><br><span class="line">        <span class="keyword">if</span> (newCapacity - MAX_ARRAY_SIZE &gt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = hugeCapacity(minCapacity);</span><br><span class="line">        <span class="comment">// minCapacity is usually close to size, so this is a win:</span></span><br><span class="line">        elementData = Arrays.copyOf(elementData, newCapacity);<span class="comment">//产生一个新的ArrayList对象,并将原来的元素拷贝到新的集合对象内,新的集合对象容量为原来的1.5倍</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><ul>
-<li>是一个<strong>双向</strong>链表结构 Node节点有一个对于前一个节点的引用,后一个节点的引用<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    E item;</span><br><span class="line">    Node&lt;E&gt; next;</span><br><span class="line">    Node&lt;E&gt; prev;</span><br><span class="line"></span><br><span class="line">    Node(Node&lt;E&gt; prev, E element, Node&lt;E&gt; next) &#123;</span><br><span class="line">        <span class="keyword">this</span>.item = element;</span><br><span class="line">        <span class="keyword">this</span>.next = next;</span><br><span class="line">        <span class="keyword">this</span>.prev = prev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>实现了<strong>Deque</strong>(Double ended Queue 双端队列),继承自<strong>Queue</strong>队列,先进先出.</li>
-</ul>
-]]></content>
-      <categories>
-        <category>JDK</category>
-      </categories>
-      <tags>
-        <tag>JDK</tag>
-        <tag>手记</tag>
       </tags>
   </entry>
   <entry>
@@ -435,6 +369,72 @@
       <tags>
         <tag>Spring boot</tag>
         <tag>GraphQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java集合容器</title>
+    <url>/2018/03/16/java%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8/</url>
+    <content><![CDATA[<p>突然发现,每天深陷业务的纠缠中无法自拔,对于Java的基础部分知之甚少.所以开始看看一些java core基础的部分<br>今天来了解一下集合容器</p>
+<span id="more"></span>
+<h1 id="Java集合框架"><a href="#Java集合框架" class="headerlink" title="Java集合框架"></a>Java集合框架</h1><ul>
+<li>用来表示和操作集合的统一的架构,它包含了实现集合的接口与类</li>
+<li>不同的集合类有不同的数据结构,在使用中要根据不同的性能要求,使用不同的集合类</li>
+<li>有哪些接口<ul>
+<li>Iterable 迭代器接口</li>
+<li>Collection 类集合接口</li>
+<li>List 列表接口</li>
+<li>Set 数据集接口</li>
+<li>Queue 对接裂口</li>
+<li>Map 键值对映射表</li>
+</ul>
+</li>
+</ul>
+<h2 id="Iterable-接口"><a href="#Iterable-接口" class="headerlink" title="Iterable 接口"></a>Iterable 接口</h2><ul>
+<li>实现该接口允许对象成为”foreach”语句的目标,也就是该集合允许迭代 </li>
+<li>迭代器是实现了Iterator/ListIterator 接口的类的对象,可以通过遍历类集,访问操作其中的每个元素</li>
+<li>ListIterator 扩展了 Iterator, 允许<strong>双向遍历</strong>集合,并且可以删除和修改元素 </li>
+<li>ListIterator 根据方法发现可以去到上一个元素<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 是否有上一个元素</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">hasPrevious</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 取上一个元素</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function">E <span class="title">previous</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(String it:array) <span class="comment">//循环方式</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="Collection-类集接口"><a href="#Collection-类集接口" class="headerlink" title="Collection 类集接口"></a>Collection 类集接口</h2><ul>
+<li>是Iterable接口的<strong>子接口</strong>,所有类集对象可以访问,但是Map不行.</li>
+<li>存放各种元素.有些是<strong>有序</strong>有些是<strong>无序</strong>的<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 返回一个在一组T类型的元素上进行迭代的迭代器.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">Iteator&lt;T&gt; <span class="title">iterator</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="List-Set-Map"><a href="#List-Set-Map" class="headerlink" title="List/ Set /Map"></a>List/ Set /Map</h2></li>
+<li>List<ul>
+<li>扩展了Collection</li>
+<li>是一个<strong>有序</strong>的容器</li>
+<li>存放的元素是<strong>可重复</strong>的<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ListIterator&lt;E&gt; <span class="title">listIterator</span><span class="params">()</span></span>;<span class="comment">//成为一个可以双向遍历的迭代器对象</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>Set<ul>
+<li>扩展了Collection</li>
+<li>是一个<strong>无序</strong>的容器</li>
+<li>存放的元素是<strong>不可重复</strong>的</li>
+</ul>
+</li>
+<li>Map<ul>
+<li>是一个存储关键字键/值对的对象,可以通过键查询到所对应的值,键和值都可以是对象</li>
+<li>并不是Collection的子接口,所以Map本身不能使用迭代器来进行遍历</li>
+</ul>
+</li>
+</ul>
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ul>
+<li>调用一个无参的构造方法的时候,会在内部调用一个初始大小为<strong>10</strong>的ArrayList对象</li>
+<li>可以添加<strong>null</strong>为容器中的一个元素</li>
+<li>当添加一个元素的时候<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment">* 产生一个新的数组,并且容量是原有数组大小的1.5倍</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">grow</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// overflow-conscious code</span></span><br><span class="line">        <span class="keyword">int</span> oldCapacity = elementData.length;<span class="comment">//当前容器内数组的大小</span></span><br><span class="line">        <span class="keyword">int</span> newCapacity = oldCapacity + (oldCapacity &gt;&gt; <span class="number">1</span>);<span class="comment">//原有容器内数组大小+容器大小右移一位(右移一位可以视为计算除以2)</span></span><br><span class="line">        <span class="keyword">if</span> (newCapacity - minCapacity &lt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = minCapacity;</span><br><span class="line">        <span class="keyword">if</span> (newCapacity - MAX_ARRAY_SIZE &gt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = hugeCapacity(minCapacity);</span><br><span class="line">        <span class="comment">// minCapacity is usually close to size, so this is a win:</span></span><br><span class="line">        elementData = Arrays.copyOf(elementData, newCapacity);<span class="comment">//产生一个新的ArrayList对象,并将原来的元素拷贝到新的集合对象内,新的集合对象容量为原来的1.5倍</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><ul>
+<li>是一个<strong>双向</strong>链表结构 Node节点有一个对于前一个节点的引用,后一个节点的引用<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    E item;</span><br><span class="line">    Node&lt;E&gt; next;</span><br><span class="line">    Node&lt;E&gt; prev;</span><br><span class="line"></span><br><span class="line">    Node(Node&lt;E&gt; prev, E element, Node&lt;E&gt; next) &#123;</span><br><span class="line">        <span class="keyword">this</span>.item = element;</span><br><span class="line">        <span class="keyword">this</span>.next = next;</span><br><span class="line">        <span class="keyword">this</span>.prev = prev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>实现了<strong>Deque</strong>(Double ended Queue 双端队列),继承自<strong>Queue</strong>队列,先进先出.</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JDK</category>
+      </categories>
+      <tags>
+        <tag>JDK</tag>
+        <tag>手记</tag>
       </tags>
   </entry>
   <entry>
