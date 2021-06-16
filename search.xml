@@ -82,107 +82,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Nginx小记</title>
-    <url>/2017/07/26/Nginx%E5%B0%8F%E8%AE%B0/</url>
-    <content><![CDATA[<p>闲来无聊看看 Nginx .</p>
-<ul>
-<li>操作系统: Ubuntu 14.04</li>
-<li>安装方式: Build source</li>
-<li>安装之前使用./configure 检查是否可以进行安装是否缺少模块</li>
-</ul>
-<span id="more"></span>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/nginx --with-http_ssl_module --with-http_spdy_module --with-http_stub_status_module --with-pcre</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>发生错误:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./configure: error: the HTTP rewrite module requires the PCRE library.</span><br></pre></td></tr></table></figure>
-<p>解决办法:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install libpcre3 libpcre3-dev</span><br></pre></td></tr></table></figure>
-
-<p>然后继续执行./configure 的命令 发现又少东西了~  这次是 openssl</p>
-<p>发生错误:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./configure: error: SSL modules require the OpenSSL library.</span><br></pre></td></tr></table></figure>
-<p>解决办法:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install openssl libssl-dev</span><br></pre></td></tr></table></figure>
-<p>然后继续./configure </p>
-<p>OK 搞定了~  安装吧~</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ make </span><br><span class="line">$ make install</span><br></pre></td></tr></table></figure>
-<p>nginx.conf 配置<br>需求:是想让 nginx 反向代理到本机 node express 启动的一个web 程序上但是想让在解析的时候浏览器输入 localhost8081/express 解析解析到localhost:3000上.</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen       8081;<span class="comment">//监听本机8081端口</span></span><br><span class="line">        server_name  yun.he.he;<span class="comment">//编辑本机 hosts 127.0.0.1解析到 yun.he.he 域名</span></span><br><span class="line">        #root /data/www/yun; <span class="comment">//反向代理后没用</span></span><br><span class="line">        location /express/ &#123; <span class="comment">//解析url 中的/express</span></span><br><span class="line">	    rewrite /express/(.*) /$1 break;  <span class="comment">//重写路径  $1代表前面 小括号内的内容 并且/ express 不进行转发</span></span><br><span class="line">            proxy_pass http:<span class="comment">//10.32.43.42:3000;//讲上面的地址转发到这个 url</span></span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>服务器</category>
-      </categories>
-      <tags>
-        <tag>手记</tag>
-        <tag>Nginx</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java集合容器</title>
-    <url>/2018/03/16/java%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8/</url>
-    <content><![CDATA[<p>突然发现,每天深陷业务的纠缠中无法自拔,对于Java的基础部分知之甚少.所以开始看看一些java core基础的部分<br>今天来了解一下集合容器</p>
-<span id="more"></span>
-<h1 id="Java集合框架"><a href="#Java集合框架" class="headerlink" title="Java集合框架"></a>Java集合框架</h1><ul>
-<li>用来表示和操作集合的统一的架构,它包含了实现集合的接口与类</li>
-<li>不同的集合类有不同的数据结构,在使用中要根据不同的性能要求,使用不同的集合类</li>
-<li>有哪些接口<ul>
-<li>Iterable 迭代器接口</li>
-<li>Collection 类集合接口</li>
-<li>List 列表接口</li>
-<li>Set 数据集接口</li>
-<li>Queue 对接裂口</li>
-<li>Map 键值对映射表</li>
-</ul>
-</li>
-</ul>
-<h2 id="Iterable-接口"><a href="#Iterable-接口" class="headerlink" title="Iterable 接口"></a>Iterable 接口</h2><ul>
-<li>实现该接口允许对象成为”foreach”语句的目标,也就是该集合允许迭代 </li>
-<li>迭代器是实现了Iterator/ListIterator 接口的类的对象,可以通过遍历类集,访问操作其中的每个元素</li>
-<li>ListIterator 扩展了 Iterator, 允许<strong>双向遍历</strong>集合,并且可以删除和修改元素 </li>
-<li>ListIterator 根据方法发现可以去到上一个元素<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 是否有上一个元素</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">hasPrevious</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 取上一个元素</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function">E <span class="title">previous</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(String it:array) <span class="comment">//循环方式</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<hr>
-<h2 id="Collection-类集接口"><a href="#Collection-类集接口" class="headerlink" title="Collection 类集接口"></a>Collection 类集接口</h2><ul>
-<li>是Iterable接口的<strong>子接口</strong>,所有类集对象可以访问,但是Map不行.</li>
-<li>存放各种元素.有些是<strong>有序</strong>有些是<strong>无序</strong>的<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 返回一个在一组T类型的元素上进行迭代的迭代器.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">Iteator&lt;T&gt; <span class="title">iterator</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="List-Set-Map"><a href="#List-Set-Map" class="headerlink" title="List/ Set /Map"></a>List/ Set /Map</h2></li>
-<li>List<ul>
-<li>扩展了Collection</li>
-<li>是一个<strong>有序</strong>的容器</li>
-<li>存放的元素是<strong>可重复</strong>的<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ListIterator&lt;E&gt; <span class="title">listIterator</span><span class="params">()</span></span>;<span class="comment">//成为一个可以双向遍历的迭代器对象</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>Set<ul>
-<li>扩展了Collection</li>
-<li>是一个<strong>无序</strong>的容器</li>
-<li>存放的元素是<strong>不可重复</strong>的</li>
-</ul>
-</li>
-<li>Map<ul>
-<li>是一个存储关键字键/值对的对象,可以通过键查询到所对应的值,键和值都可以是对象</li>
-<li>并不是Collection的子接口,所以Map本身不能使用迭代器来进行遍历</li>
-</ul>
-</li>
-</ul>
-<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ul>
-<li>调用一个无参的构造方法的时候,会在内部调用一个初始大小为<strong>10</strong>的ArrayList对象</li>
-<li>可以添加<strong>null</strong>为容器中的一个元素</li>
-<li>当添加一个元素的时候<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment">* 产生一个新的数组,并且容量是原有数组大小的1.5倍</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">grow</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// overflow-conscious code</span></span><br><span class="line">        <span class="keyword">int</span> oldCapacity = elementData.length;<span class="comment">//当前容器内数组的大小</span></span><br><span class="line">        <span class="keyword">int</span> newCapacity = oldCapacity + (oldCapacity &gt;&gt; <span class="number">1</span>);<span class="comment">//原有容器内数组大小+容器大小右移一位(右移一位可以视为计算除以2)</span></span><br><span class="line">        <span class="keyword">if</span> (newCapacity - minCapacity &lt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = minCapacity;</span><br><span class="line">        <span class="keyword">if</span> (newCapacity - MAX_ARRAY_SIZE &gt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = hugeCapacity(minCapacity);</span><br><span class="line">        <span class="comment">// minCapacity is usually close to size, so this is a win:</span></span><br><span class="line">        elementData = Arrays.copyOf(elementData, newCapacity);<span class="comment">//产生一个新的ArrayList对象,并将原来的元素拷贝到新的集合对象内,新的集合对象容量为原来的1.5倍</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><ul>
-<li>是一个<strong>双向</strong>链表结构 Node节点有一个对于前一个节点的引用,后一个节点的引用<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    E item;</span><br><span class="line">    Node&lt;E&gt; next;</span><br><span class="line">    Node&lt;E&gt; prev;</span><br><span class="line"></span><br><span class="line">    Node(Node&lt;E&gt; prev, E element, Node&lt;E&gt; next) &#123;</span><br><span class="line">        <span class="keyword">this</span>.item = element;</span><br><span class="line">        <span class="keyword">this</span>.next = next;</span><br><span class="line">        <span class="keyword">this</span>.prev = prev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>实现了<strong>Deque</strong>(Double ended Queue 双端队列),继承自<strong>Queue</strong>队列,先进先出.</li>
-</ul>
-]]></content>
-      <categories>
-        <category>JDK</category>
-      </categories>
-      <tags>
-        <tag>JDK</tag>
-        <tag>手记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>从头装一次Macbook pro 2019</title>
     <url>/2020/02/23/build-new-macbook-pro/</url>
     <content><![CDATA[<h1 id="我的新电脑装了哪些软件"><a href="#我的新电脑装了哪些软件" class="headerlink" title="我的新电脑装了哪些软件"></a>我的新电脑装了哪些软件</h1><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><ul>
@@ -279,6 +178,41 @@
       </categories>
       <tags>
         <tag>diary</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nginx小记</title>
+    <url>/2017/07/26/Nginx%E5%B0%8F%E8%AE%B0/</url>
+    <content><![CDATA[<p>闲来无聊看看 Nginx .</p>
+<ul>
+<li>操作系统: Ubuntu 14.04</li>
+<li>安装方式: Build source</li>
+<li>安装之前使用./configure 检查是否可以进行安装是否缺少模块</li>
+</ul>
+<span id="more"></span>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/nginx --with-http_ssl_module --with-http_spdy_module --with-http_stub_status_module --with-pcre</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>发生错误:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./configure: error: the HTTP rewrite module requires the PCRE library.</span><br></pre></td></tr></table></figure>
+<p>解决办法:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install libpcre3 libpcre3-dev</span><br></pre></td></tr></table></figure>
+
+<p>然后继续执行./configure 的命令 发现又少东西了~  这次是 openssl</p>
+<p>发生错误:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./configure: error: SSL modules require the OpenSSL library.</span><br></pre></td></tr></table></figure>
+<p>解决办法:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install openssl libssl-dev</span><br></pre></td></tr></table></figure>
+<p>然后继续./configure </p>
+<p>OK 搞定了~  安装吧~</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ make </span><br><span class="line">$ make install</span><br></pre></td></tr></table></figure>
+<p>nginx.conf 配置<br>需求:是想让 nginx 反向代理到本机 node express 启动的一个web 程序上但是想让在解析的时候浏览器输入 localhost8081/express 解析解析到localhost:3000上.</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen       8081;<span class="comment">//监听本机8081端口</span></span><br><span class="line">        server_name  yun.he.he;<span class="comment">//编辑本机 hosts 127.0.0.1解析到 yun.he.he 域名</span></span><br><span class="line">        #root /data/www/yun; <span class="comment">//反向代理后没用</span></span><br><span class="line">        location /express/ &#123; <span class="comment">//解析url 中的/express</span></span><br><span class="line">	    rewrite /express/(.*) /$1 break;  <span class="comment">//重写路径  $1代表前面 小括号内的内容 并且/ express 不进行转发</span></span><br><span class="line">            proxy_pass http:<span class="comment">//10.32.43.42:3000;//讲上面的地址转发到这个 url</span></span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>手记</tag>
+        <tag>Nginx</tag>
       </tags>
   </entry>
   <entry>
@@ -435,6 +369,72 @@
       <tags>
         <tag>Spring boot</tag>
         <tag>GraphQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java集合容器</title>
+    <url>/2018/03/16/java%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8/</url>
+    <content><![CDATA[<p>突然发现,每天深陷业务的纠缠中无法自拔,对于Java的基础部分知之甚少.所以开始看看一些java core基础的部分<br>今天来了解一下集合容器</p>
+<span id="more"></span>
+<h1 id="Java集合框架"><a href="#Java集合框架" class="headerlink" title="Java集合框架"></a>Java集合框架</h1><ul>
+<li>用来表示和操作集合的统一的架构,它包含了实现集合的接口与类</li>
+<li>不同的集合类有不同的数据结构,在使用中要根据不同的性能要求,使用不同的集合类</li>
+<li>有哪些接口<ul>
+<li>Iterable 迭代器接口</li>
+<li>Collection 类集合接口</li>
+<li>List 列表接口</li>
+<li>Set 数据集接口</li>
+<li>Queue 对接裂口</li>
+<li>Map 键值对映射表</li>
+</ul>
+</li>
+</ul>
+<h2 id="Iterable-接口"><a href="#Iterable-接口" class="headerlink" title="Iterable 接口"></a>Iterable 接口</h2><ul>
+<li>实现该接口允许对象成为”foreach”语句的目标,也就是该集合允许迭代 </li>
+<li>迭代器是实现了Iterator/ListIterator 接口的类的对象,可以通过遍历类集,访问操作其中的每个元素</li>
+<li>ListIterator 扩展了 Iterator, 允许<strong>双向遍历</strong>集合,并且可以删除和修改元素 </li>
+<li>ListIterator 根据方法发现可以去到上一个元素<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 是否有上一个元素</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">hasPrevious</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 取上一个元素</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function">E <span class="title">previous</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(String it:array) <span class="comment">//循环方式</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="Collection-类集接口"><a href="#Collection-类集接口" class="headerlink" title="Collection 类集接口"></a>Collection 类集接口</h2><ul>
+<li>是Iterable接口的<strong>子接口</strong>,所有类集对象可以访问,但是Map不行.</li>
+<li>存放各种元素.有些是<strong>有序</strong>有些是<strong>无序</strong>的<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 返回一个在一组T类型的元素上进行迭代的迭代器.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">Iteator&lt;T&gt; <span class="title">iterator</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="List-Set-Map"><a href="#List-Set-Map" class="headerlink" title="List/ Set /Map"></a>List/ Set /Map</h2></li>
+<li>List<ul>
+<li>扩展了Collection</li>
+<li>是一个<strong>有序</strong>的容器</li>
+<li>存放的元素是<strong>可重复</strong>的<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ListIterator&lt;E&gt; <span class="title">listIterator</span><span class="params">()</span></span>;<span class="comment">//成为一个可以双向遍历的迭代器对象</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>Set<ul>
+<li>扩展了Collection</li>
+<li>是一个<strong>无序</strong>的容器</li>
+<li>存放的元素是<strong>不可重复</strong>的</li>
+</ul>
+</li>
+<li>Map<ul>
+<li>是一个存储关键字键/值对的对象,可以通过键查询到所对应的值,键和值都可以是对象</li>
+<li>并不是Collection的子接口,所以Map本身不能使用迭代器来进行遍历</li>
+</ul>
+</li>
+</ul>
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ul>
+<li>调用一个无参的构造方法的时候,会在内部调用一个初始大小为<strong>10</strong>的ArrayList对象</li>
+<li>可以添加<strong>null</strong>为容器中的一个元素</li>
+<li>当添加一个元素的时候<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment">* 产生一个新的数组,并且容量是原有数组大小的1.5倍</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">grow</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// overflow-conscious code</span></span><br><span class="line">        <span class="keyword">int</span> oldCapacity = elementData.length;<span class="comment">//当前容器内数组的大小</span></span><br><span class="line">        <span class="keyword">int</span> newCapacity = oldCapacity + (oldCapacity &gt;&gt; <span class="number">1</span>);<span class="comment">//原有容器内数组大小+容器大小右移一位(右移一位可以视为计算除以2)</span></span><br><span class="line">        <span class="keyword">if</span> (newCapacity - minCapacity &lt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = minCapacity;</span><br><span class="line">        <span class="keyword">if</span> (newCapacity - MAX_ARRAY_SIZE &gt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = hugeCapacity(minCapacity);</span><br><span class="line">        <span class="comment">// minCapacity is usually close to size, so this is a win:</span></span><br><span class="line">        elementData = Arrays.copyOf(elementData, newCapacity);<span class="comment">//产生一个新的ArrayList对象,并将原来的元素拷贝到新的集合对象内,新的集合对象容量为原来的1.5倍</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><ul>
+<li>是一个<strong>双向</strong>链表结构 Node节点有一个对于前一个节点的引用,后一个节点的引用<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    E item;</span><br><span class="line">    Node&lt;E&gt; next;</span><br><span class="line">    Node&lt;E&gt; prev;</span><br><span class="line"></span><br><span class="line">    Node(Node&lt;E&gt; prev, E element, Node&lt;E&gt; next) &#123;</span><br><span class="line">        <span class="keyword">this</span>.item = element;</span><br><span class="line">        <span class="keyword">this</span>.next = next;</span><br><span class="line">        <span class="keyword">this</span>.prev = prev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>实现了<strong>Deque</strong>(Double ended Queue 双端队列),继承自<strong>Queue</strong>队列,先进先出.</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JDK</category>
+      </categories>
+      <tags>
+        <tag>JDK</tag>
+        <tag>手记</tag>
       </tags>
   </entry>
   <entry>
