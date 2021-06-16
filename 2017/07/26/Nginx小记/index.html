@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -25,10 +25,10 @@
 <meta property="og:description" content="闲来无聊看看 Nginx .  操作系统: Ubuntu 14.04 安装方式: Build source 安装之前使用.&#x2F;configure 检查是否可以进行安装是否缺少模块">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-07-26T05:37:31.000Z">
-<meta property="article:modified_time" content="2020-02-29T14:06:53.502Z">
+<meta property="article:modified_time" content="2017-07-26T05:37:31.000Z">
 <meta property="article:author" content="YunXF">
-<meta property="article:tag" content="Nginx">
 <meta property="article:tag" content="手记">
+<meta property="article:tag" content="Nginx">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://www.yunxf.me/2017/07/26/Nginx%E5%B0%8F%E8%AE%B0/">
@@ -222,13 +222,6 @@
 
               <time title="创建时间：2017-07-26 13:37:31" itemprop="dateCreated datePublished" datetime="2017-07-26T13:37:31+08:00">2017-07-26</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-29 22:06:53" itemprop="dateModified" datetime="2020-02-29T22:06:53+08:00">2020-02-29</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -277,9 +270,9 @@
 <li>安装方式: Build source</li>
 <li>安装之前使用./configure 检查是否可以进行安装是否缺少模块</li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/nginx --with-http_ssl_module --with-http_spdy_module --with-http_stub_status_module --with-pcre</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/nginx --with-http_ssl_module --with-http_spdy_module --with-http_stub_status_module --with-pcre</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>发生错误:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./configure: error: the HTTP rewrite module requires the PCRE library.</span><br></pre></td></tr></table></figure>
 <p>解决办法:</p>
@@ -294,7 +287,7 @@
 <p>OK 搞定了~  安装吧~</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ make </span><br><span class="line">$ make install</span><br></pre></td></tr></table></figure>
 <p>nginx.conf 配置<br>需求:是想让 nginx 反向代理到本机 node express 启动的一个web 程序上但是想让在解析的时候浏览器输入 localhost8081/express 解析解析到localhost:3000上.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen       8081;//监听本机8081端口</span><br><span class="line">        server_name  yun.he.he;//编辑本机 hosts 127.0.0.1解析到 yun.he.he 域名</span><br><span class="line">        #root /data/www/yun; //反向代理后没用</span><br><span class="line">        location /express/ &#123; //解析url 中的/express</span><br><span class="line">	    rewrite /express/(.*) /$1 break;  //重写路径  $1代表前面 小括号内的内容 并且/ express 不进行转发</span><br><span class="line">            proxy_pass http://10.32.43.42:3000;//讲上面的地址转发到这个 url</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen       8081;<span class="comment">//监听本机8081端口</span></span><br><span class="line">        server_name  yun.he.he;<span class="comment">//编辑本机 hosts 127.0.0.1解析到 yun.he.he 域名</span></span><br><span class="line">        #root /data/www/yun; <span class="comment">//反向代理后没用</span></span><br><span class="line">        location /express/ &#123; <span class="comment">//解析url 中的/express</span></span><br><span class="line">	    rewrite /express/(.*) /$1 break;  <span class="comment">//重写路径  $1代表前面 小括号内的内容 并且/ express 不进行转发</span></span><br><span class="line">            proxy_pass http:<span class="comment">//10.32.43.42:3000;//讲上面的地址转发到这个 url</span></span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -304,8 +297,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/Nginx/" rel="tag"><i class="fa fa-tag"></i> Nginx</a>
               <a href="/tags/diary/" rel="tag"><i class="fa fa-tag"></i> 手记</a>
+              <a href="/tags/Nginx/" rel="tag"><i class="fa fa-tag"></i> Nginx</a>
           </div>
 
         
@@ -528,15 +521,15 @@
     }
   }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=EKlO641Url0aKl5cNNB0i3Gx-gzGzoHsz')
+  fetch('https://app-router.leancloud.cn/2/route?appId=N6TK2DiHOdrE3VtV0Ip0MgJG-MdYXbMMI')
     .then(response => response.json())
     .then(({ api_server }) => {
       var Counter = (method, url, data) => {
         return fetch(`https://${api_server}/1.1${url}`, {
           method,
           headers: {
-            'X-LC-Id'     : 'EKlO641Url0aKl5cNNB0i3Gx-gzGzoHsz',
-            'X-LC-Key'    : 'cx02Dd7L58HDFlr1uVbUcaYR😀',
+            'X-LC-Id'     : 'N6TK2DiHOdrE3VtV0Ip0MgJG-MdYXbMMI',
+            'X-LC-Key'    : 'cx02Dd7L58HDFlr1uVbUcaYR',
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)

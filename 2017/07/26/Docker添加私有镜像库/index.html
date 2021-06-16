@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -25,7 +25,7 @@
 <meta property="og:description" content="因为当初双系统给Linux分配硬盘小了~ 可悲的是镜像沾满了所有硬盘.索性全部全盘全格式化了从新安装了.(没有备份,各种文件找不到)但是发现一个问题.忘了私有镜像库的配制方法...好吧原谅我老了健忘...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-07-26T07:25:57.000Z">
-<meta property="article:modified_time" content="2020-02-29T14:08:17.078Z">
+<meta property="article:modified_time" content="2017-07-26T07:25:57.000Z">
 <meta property="article:author" content="YunXF">
 <meta property="article:tag" content="Docker">
 <meta property="article:tag" content="DevOps">
@@ -222,13 +222,6 @@
 
               <time title="创建时间：2017-07-26 15:25:57" itemprop="dateCreated datePublished" datetime="2017-07-26T15:25:57+08:00">2017-07-26</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-29 22:08:17" itemprop="dateModified" datetime="2020-02-29T22:08:17+08:00">2020-02-29</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -271,11 +264,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <pre><code>因为当初双系统给Linux分配硬盘小了~ 可悲的是镜像沾满了所有硬盘.索性全部全盘全格式化了从新安装了.(没有备份,各种文件找不到)但是发现一个问题.忘了私有镜像库的配制方法...好吧原谅我老了健忘...</code></pre><a id="more"></a>
+        <pre><code>因为当初双系统给Linux分配硬盘小了~ 可悲的是镜像沾满了所有硬盘.索性全部全盘全格式化了从新安装了.(没有备份,各种文件找不到)但是发现一个问题.忘了私有镜像库的配制方法...好吧原谅我老了健忘...
+</code></pre>
+<span id="more"></span>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"je"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//修改这个文件.</span><br><span class="line">$ /etc/defaults/docker</span><br><span class="line">DOCKER_OPTS=<span class="string">"<span class="variable">$DOCKER_OPTS</span> --registry-mirror=registry.domain.org"</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">registry.domain.org/elk/elasticsearch:latest</span><br><span class="line">Error response from daemon: invalid registry endpoint https://registry.domain.org/v0/: unable to ping registry endpoint https://registry.domain.org/v0/</span><br><span class="line">v2 ping attempt failed with error: Get https://registry.domain.org/v2/: x509: certificate signed by unknown authority</span><br><span class="line">v1 ping attempt failed with error: Get https://registry.domain.org/v1/_ping: x509: certificate signed by unknown authority. If this private registry supports only HTTP or HTTPS with an unknown CA certificate, please add `--insecure-registry registry.domain.org` to the daemon<span class="string">'s arguments. In the case of HTTPS, if you have access to the registry'</span>s CA certificate, no need <span class="keyword">for</span> the flag; simply place the CA certificate at /etc/docker/certs.d/registry.domain.org/ca.crt</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;je&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//修改这个文件.</span><br><span class="line">$ /etc/defaults/docker</span><br><span class="line">DOCKER_OPTS=<span class="string">&quot;<span class="variable">$DOCKER_OPTS</span> --registry-mirror=registry.domain.org&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">registry.domain.org/elk/elasticsearch:latest</span><br><span class="line">Error response from daemon: invalid registry endpoint https://registry.domain.org/v0/: unable to ping registry endpoint https://registry.domain.org/v0/</span><br><span class="line">v2 ping attempt failed with error: Get https://registry.domain.org/v2/: x509: certificate signed by unknown authority</span><br><span class="line">v1 ping attempt failed with error: Get https://registry.domain.org/v1/_ping: x509: certificate signed by unknown authority. If this private registry supports only HTTP or HTTPS with an unknown CA certificate, please add `--insecure-registry registry.domain.org` to the daemon<span class="string">&#x27;s arguments. In the case of HTTPS, if you have access to the registry&#x27;</span>s CA certificate, no need <span class="keyword">for</span> the flag; simply place the CA certificate at /etc/docker/certs.d/registry.domain.org/ca.crt</span><br></pre></td></tr></table></figure>
 
 
 <p>上面写的很明白了~ https~ 但是我没有证书.翻箱倒柜.终于找到当初生成的证书…但是需要放在/etc/docker/certs.d/registry.domain.org/目录下的 ca.crt文件<br>这里貌似必须用 root 用户新建这个文件.然后拷贝你的证书内容进去,别问我为什么.我也不知道…</p>
@@ -517,15 +512,15 @@
     }
   }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=EKlO641Url0aKl5cNNB0i3Gx-gzGzoHsz')
+  fetch('https://app-router.leancloud.cn/2/route?appId=N6TK2DiHOdrE3VtV0Ip0MgJG-MdYXbMMI')
     .then(response => response.json())
     .then(({ api_server }) => {
       var Counter = (method, url, data) => {
         return fetch(`https://${api_server}/1.1${url}`, {
           method,
           headers: {
-            'X-LC-Id'     : 'EKlO641Url0aKl5cNNB0i3Gx-gzGzoHsz',
-            'X-LC-Key'    : 'cx02Dd7L58HDFlr1uVbUcaYR😀',
+            'X-LC-Id'     : 'N6TK2DiHOdrE3VtV0Ip0MgJG-MdYXbMMI',
+            'X-LC-Key'    : 'cx02Dd7L58HDFlr1uVbUcaYR',
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)

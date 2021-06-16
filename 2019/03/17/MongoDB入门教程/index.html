@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -25,7 +25,7 @@
 <meta property="og:description" content="突发奇想,想要在家里的笔记本上安装个MongoDB,平时偶尔能用一下来进行测试,既然笔记本上有Docker环境,当然要利用起来了">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-03-17T09:43:29.000Z">
-<meta property="article:modified_time" content="2020-02-29T14:07:25.326Z">
+<meta property="article:modified_time" content="2019-03-17T09:43:29.000Z">
 <meta property="article:author" content="YunXF">
 <meta property="article:tag" content="Docker">
 <meta property="article:tag" content="MongoDB">
@@ -222,13 +222,6 @@
 
               <time title="创建时间：2019-03-17 17:43:29" itemprop="dateCreated datePublished" datetime="2019-03-17T17:43:29+08:00">2019-03-17</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-29 22:07:25" itemprop="dateModified" datetime="2020-02-29T22:07:25+08:00">2020-02-29</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -272,7 +265,7 @@
 
       
         <p>突发奇想,想要在家里的笔记本上安装个MongoDB,平时偶尔能用一下来进行测试,既然笔记本上有Docker环境,当然要利用起来了</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin  -d mongo --auth --authenticationDatabase heheda</span><br></pre></td></tr></table></figure>
 <ul>
@@ -282,8 +275,8 @@
 </ul>
 <p>现在你有了一个管理员账户,但是对于不同的数据库,要使用不同的用户,怎么控制呢? </p>
 <p>Let’s get it ,我现在需要一个demo数据库,并且需要一个用户对demo数据库有完全管理权限.用户名和密码就都是demo吧</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt; mongo 192.168.123.123:27017/admin -u admin -p admin</span><br><span class="line">&gt; use demo</span><br><span class="line">switched to db demo</span><br><span class="line">&gt; db.createUser(&#123;user:<span class="string">"demo"</span>,<span class="built_in">pwd</span>:<span class="string">"demo"</span>,roles:[&#123;<span class="string">"role"</span>:<span class="string">"dbAdmin"</span>,<span class="string">"db"</span>:<span class="string">"demo"</span>&#125;]&#125;)</span><br><span class="line">Successfully added user: &#123;</span><br><span class="line">	<span class="string">"user"</span> : <span class="string">"demo"</span>,</span><br><span class="line">	<span class="string">"roles"</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"role"</span> : <span class="string">"dbAdmin"</span>,</span><br><span class="line">			<span class="string">"db"</span> : <span class="string">"demo"</span></span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>登录到Docker上的mongo server ,我使用本地装好的mongo client ,<code>use demo</code>选择一个数据库,这样也就是创建了一个数据库,<code>createUser</code>在demo数据库下,创建了一个demo用户,用户名密码都是demo.<code>{&quot;role&quot;:&quot;dbAdmin&quot;,&quot;db&quot;:&quot;demo&quot;}</code> dbAdmin: 数据库管理员,具体有什么权限参照下面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt; mongo 192.168.123.123:27017/admin -u admin -p admin</span><br><span class="line">&gt; use demo</span><br><span class="line">switched to db demo</span><br><span class="line">&gt; db.createUser(&#123;user:<span class="string">&quot;demo&quot;</span>,<span class="built_in">pwd</span>:<span class="string">&quot;demo&quot;</span>,roles:[&#123;<span class="string">&quot;role&quot;</span>:<span class="string">&quot;dbAdmin&quot;</span>,<span class="string">&quot;db&quot;</span>:<span class="string">&quot;demo&quot;</span>&#125;]&#125;)</span><br><span class="line">Successfully added user: &#123;</span><br><span class="line">	<span class="string">&quot;user&quot;</span> : <span class="string">&quot;demo&quot;</span>,</span><br><span class="line">	<span class="string">&quot;roles&quot;</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">&quot;role&quot;</span> : <span class="string">&quot;dbAdmin&quot;</span>,</span><br><span class="line">			<span class="string">&quot;db&quot;</span> : <span class="string">&quot;demo&quot;</span></span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>登录到Docker上的mongo server ,我使用本地装好的mongo client ,<code>use demo</code>选择一个数据库,这样也就是创建了一个数据库,<code>createUser</code>在demo数据库下,创建了一个demo用户,用户名密码都是demo.<code>&#123;&quot;role&quot;:&quot;dbAdmin&quot;,&quot;db&quot;:&quot;demo&quot;&#125;</code> dbAdmin: 数据库管理员,具体有什么权限参照下面</p>
 <ul>
 <li>read:允许用户读取指定数据库 </li>
 <li>readWrite:允许用户读写指定数据库 </li>
@@ -533,15 +526,15 @@
     }
   }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=EKlO641Url0aKl5cNNB0i3Gx-gzGzoHsz')
+  fetch('https://app-router.leancloud.cn/2/route?appId=N6TK2DiHOdrE3VtV0Ip0MgJG-MdYXbMMI')
     .then(response => response.json())
     .then(({ api_server }) => {
       var Counter = (method, url, data) => {
         return fetch(`https://${api_server}/1.1${url}`, {
           method,
           headers: {
-            'X-LC-Id'     : 'EKlO641Url0aKl5cNNB0i3Gx-gzGzoHsz',
-            'X-LC-Key'    : 'cx02Dd7L58HDFlr1uVbUcaYR😀',
+            'X-LC-Id'     : 'N6TK2DiHOdrE3VtV0Ip0MgJG-MdYXbMMI',
+            'X-LC-Key'    : 'cx02Dd7L58HDFlr1uVbUcaYR',
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)

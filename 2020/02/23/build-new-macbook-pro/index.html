@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -25,7 +25,7 @@
 <meta property="og:description" content="我的新电脑装了哪些软件软件安装 Chrome 登录个人账户,同步插件和设置,密码等信息.   Typro  最好用的markdown编辑器 搜狗输入发 V2rayX 你懂得 Iterm2 oh-my-zsh 需要安装苹果自带的工具, 里面含有git   Alfred4.0.4 (原谅我可耻的使用了破解版)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-23T11:21:51.000Z">
-<meta property="article:modified_time" content="2020-03-08T03:09:51.767Z">
+<meta property="article:modified_time" content="2020-02-23T11:21:51.000Z">
 <meta property="article:author" content="YunXF">
 <meta property="article:tag" content="diary">
 <meta name="twitter:card" content="summary">
@@ -221,13 +221,6 @@
 
               <time title="创建时间：2020-02-23 19:21:51" itemprop="dateCreated datePublished" datetime="2020-02-23T19:21:51+08:00">2020-02-23</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-08 11:09:51" itemprop="dateModified" datetime="2020-03-08T11:09:51+08:00">2020-03-08</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -282,7 +275,7 @@
 <li>oh-my-zsh 需要安装苹果自带的工具, 里面含有git</li>
 </ul>
 </li>
-<li>Alfred4.0.4 (原谅我可耻的使用了破解版)<a id="more"></a></li>
+<li>Alfred4.0.4 (原谅我可耻的使用了破解版)<span id="more"></span></li>
 <li>安装Mac 神器 Homebrew<ul>
 <li>git</li>
 <li>git-flow-avh</li>
@@ -346,14 +339,11 @@
 </ul>
 </li>
 <li><p>修改iterm2中的vim 配色方案</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vimrc</span></span><br><span class="line"><span class="meta">#</span><span class="bash">编辑一下内容</span></span><br><span class="line">syntax enable</span><br><span class="line">set background=dark</span><br><span class="line">colorscheme Tomorrow-Night</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vim/coclors</span></span><br><span class="line"><span class="meta">#</span><span class="bash">拷贝原有配色方案 Tomorrow-Night.vim 到目录下</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vimrc</span></span><br><span class="line"><span class="meta">#</span><span class="bash">编辑一下内容</span></span><br><span class="line">syntax enable</span><br><span class="line">set background=dark</span><br><span class="line">colorscheme Tomorrow-Night</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vim/coclors</span></span><br><span class="line"><span class="meta">#</span><span class="bash">拷贝原有配色方案 Tomorrow-Night.vim 到目录下</span></span><br></pre></td></tr></table></figure></li>
 <li><p>配置hexo的相关地址</p>
 </li>
 <li><p>设置Mac Dock 隐藏/显示的时间延迟,默认将鼠标移动到Dock位置会有一定时间的延迟.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.Dock autohide-delay -float 0 &amp;&amp; killall Dock</span><br><span class="line"><span class="meta">#</span><span class="bash">如果想要恢复</span></span><br><span class="line">defaults delete com.apple.Dock autohide-delay &amp;&amp; killall Dock</span><br></pre></td></tr></table></figure>
-
-</li>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.Dock autohide-delay -float 0 &amp;&amp; killall Dock</span><br><span class="line"><span class="meta">#</span><span class="bash">如果想要恢复</span></span><br><span class="line">defaults delete com.apple.Dock autohide-delay &amp;&amp; killall Dock</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="数据迁移"><a href="#数据迁移" class="headerlink" title="数据迁移"></a>数据迁移</h3><ul>
 <li>maven本地包迁移</li>
@@ -447,7 +437,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#我的新电脑装了哪些软件"><span class="nav-number">1.</span> <span class="nav-text">我的新电脑装了哪些软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件安装"><span class="nav-number">1.0.1.</span> <span class="nav-text">软件安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统设置"><span class="nav-number">1.0.2.</span> <span class="nav-text">系统设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据迁移"><span class="nav-number">1.0.3.</span> <span class="nav-text">数据迁移</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E6%96%B0%E7%94%B5%E8%84%91%E8%A3%85%E4%BA%86%E5%93%AA%E4%BA%9B%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">我的新电脑装了哪些软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-number">1.0.1.</span> <span class="nav-text">软件安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.0.2.</span> <span class="nav-text">系统设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB"><span class="nav-number">1.0.3.</span> <span class="nav-text">数据迁移</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -598,15 +588,15 @@
     }
   }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=EKlO641Url0aKl5cNNB0i3Gx-gzGzoHsz')
+  fetch('https://app-router.leancloud.cn/2/route?appId=N6TK2DiHOdrE3VtV0Ip0MgJG-MdYXbMMI')
     .then(response => response.json())
     .then(({ api_server }) => {
       var Counter = (method, url, data) => {
         return fetch(`https://${api_server}/1.1${url}`, {
           method,
           headers: {
-            'X-LC-Id'     : 'EKlO641Url0aKl5cNNB0i3Gx-gzGzoHsz',
-            'X-LC-Key'    : 'cx02Dd7L58HDFlr1uVbUcaYR😀',
+            'X-LC-Id'     : 'N6TK2DiHOdrE3VtV0Ip0MgJG-MdYXbMMI',
+            'X-LC-Key'    : 'cx02Dd7L58HDFlr1uVbUcaYR',
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)

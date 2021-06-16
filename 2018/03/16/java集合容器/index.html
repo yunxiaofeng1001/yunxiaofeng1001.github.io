@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -25,10 +25,10 @@
 <meta property="og:description" content="突然发现,每天深陷业务的纠缠中无法自拔,对于Java的基础部分知之甚少.所以开始看看一些java core基础的部分今天来了解一下集合容器">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-03-16T08:48:11.000Z">
-<meta property="article:modified_time" content="2020-02-29T14:07:46.457Z">
+<meta property="article:modified_time" content="2018-03-16T08:48:11.000Z">
 <meta property="article:author" content="YunXF">
-<meta property="article:tag" content="手记">
 <meta property="article:tag" content="JDK">
+<meta property="article:tag" content="手记">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://www.yunxf.me/2018/03/16/java%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8/">
@@ -222,13 +222,6 @@
 
               <time title="创建时间：2018-03-16 16:48:11" itemprop="dateCreated datePublished" datetime="2018-03-16T16:48:11+08:00">2018-03-16</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-29 22:07:46" itemprop="dateModified" datetime="2020-02-29T22:07:46+08:00">2020-02-29</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -272,7 +265,7 @@
 
       
         <p>突然发现,每天深陷业务的纠缠中无法自拔,对于Java的基础部分知之甚少.所以开始看看一些java core基础的部分<br>今天来了解一下集合容器</p>
-<a id="more"></a>
+<span id="more"></span>
 <h1 id="Java集合框架"><a href="#Java集合框架" class="headerlink" title="Java集合框架"></a>Java集合框架</h1><ul>
 <li>用来表示和操作集合的统一的架构,它包含了实现集合的接口与类</li>
 <li>不同的集合类有不同的数据结构,在使用中要根据不同的性能要求,使用不同的集合类</li>
@@ -291,13 +284,12 @@
 <li>迭代器是实现了Iterator/ListIterator 接口的类的对象,可以通过遍历类集,访问操作其中的每个元素</li>
 <li>ListIterator 扩展了 Iterator, 允许<strong>双向遍历</strong>集合,并且可以删除和修改元素 </li>
 <li>ListIterator 根据方法发现可以去到上一个元素<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 是否有上一个元素</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">hasPrevious</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 取上一个元素</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function">E <span class="title">previous</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(String it:array) <span class="comment">//循环方式</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(String it:array) <span class="comment">//循环方式</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <hr>
 <h2 id="Collection-类集接口"><a href="#Collection-类集接口" class="headerlink" title="Collection 类集接口"></a>Collection 类集接口</h2><ul>
 <li>是Iterable接口的<strong>子接口</strong>,所有类集对象可以访问,但是Map不行.</li>
-<li>存放各种元素.有些是<strong>有序</strong>有些是<strong>无序</strong>的<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 返回一个在一组T类型的元素上进行迭代的迭代器.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">Iteator&lt;T&gt; <span class="title">iterator</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<li>存放各种元素.有些是<strong>有序</strong>有些是<strong>无序</strong>的<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 返回一个在一组T类型的元素上进行迭代的迭代器.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">Iteator&lt;T&gt; <span class="title">iterator</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="List-Set-Map"><a href="#List-Set-Map" class="headerlink" title="List/ Set /Map"></a>List/ Set /Map</h2></li>
 <li>List<ul>
 <li>扩展了Collection</li>
@@ -320,9 +312,7 @@
 <h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ul>
 <li>调用一个无参的构造方法的时候,会在内部调用一个初始大小为<strong>10</strong>的ArrayList对象</li>
 <li>可以添加<strong>null</strong>为容器中的一个元素</li>
-<li>当添加一个元素的时候<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment">* 产生一个新的数组,并且容量是原有数组大小的1.5倍</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">grow</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// overflow-conscious code</span></span><br><span class="line">        <span class="keyword">int</span> oldCapacity = elementData.length;<span class="comment">//当前容器内数组的大小</span></span><br><span class="line">        <span class="keyword">int</span> newCapacity = oldCapacity + (oldCapacity &gt;&gt; <span class="number">1</span>);<span class="comment">//原有容器内数组大小+容器大小右移一位(右移一位可以视为计算除以2)</span></span><br><span class="line">        <span class="keyword">if</span> (newCapacity - minCapacity &lt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = minCapacity;</span><br><span class="line">        <span class="keyword">if</span> (newCapacity - MAX_ARRAY_SIZE &gt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = hugeCapacity(minCapacity);</span><br><span class="line">        <span class="comment">// minCapacity is usually close to size, so this is a win:</span></span><br><span class="line">        elementData = Arrays.copyOf(elementData, newCapacity);<span class="comment">//产生一个新的ArrayList对象,并将原来的元素拷贝到新的集合对象内,新的集合对象容量为原来的1.5倍</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>当添加一个元素的时候<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment">* 产生一个新的数组,并且容量是原有数组大小的1.5倍</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">grow</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// overflow-conscious code</span></span><br><span class="line">        <span class="keyword">int</span> oldCapacity = elementData.length;<span class="comment">//当前容器内数组的大小</span></span><br><span class="line">        <span class="keyword">int</span> newCapacity = oldCapacity + (oldCapacity &gt;&gt; <span class="number">1</span>);<span class="comment">//原有容器内数组大小+容器大小右移一位(右移一位可以视为计算除以2)</span></span><br><span class="line">        <span class="keyword">if</span> (newCapacity - minCapacity &lt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = minCapacity;</span><br><span class="line">        <span class="keyword">if</span> (newCapacity - MAX_ARRAY_SIZE &gt; <span class="number">0</span>)</span><br><span class="line">            newCapacity = hugeCapacity(minCapacity);</span><br><span class="line">        <span class="comment">// minCapacity is usually close to size, so this is a win:</span></span><br><span class="line">        elementData = Arrays.copyOf(elementData, newCapacity);<span class="comment">//产生一个新的ArrayList对象,并将原来的元素拷贝到新的集合对象内,新的集合对象容量为原来的1.5倍</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><ul>
 <li>是一个<strong>双向</strong>链表结构 Node节点有一个对于前一个节点的引用,后一个节点的引用<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    E item;</span><br><span class="line">    Node&lt;E&gt; next;</span><br><span class="line">    Node&lt;E&gt; prev;</span><br><span class="line"></span><br><span class="line">    Node(Node&lt;E&gt; prev, E element, Node&lt;E&gt; next) &#123;</span><br><span class="line">        <span class="keyword">this</span>.item = element;</span><br><span class="line">        <span class="keyword">this</span>.next = next;</span><br><span class="line">        <span class="keyword">this</span>.prev = prev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
@@ -338,8 +328,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/diary/" rel="tag"><i class="fa fa-tag"></i> 手记</a>
               <a href="/tags/JDK/" rel="tag"><i class="fa fa-tag"></i> JDK</a>
+              <a href="/tags/diary/" rel="tag"><i class="fa fa-tag"></i> 手记</a>
           </div>
 
         
@@ -415,7 +405,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java集合框架"><span class="nav-number">1.</span> <span class="nav-text">Java集合框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterable-接口"><span class="nav-number">1.1.</span> <span class="nav-text">Iterable 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection-类集接口"><span class="nav-number">1.2.</span> <span class="nav-text">Collection 类集接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List-Set-Map"><span class="nav-number">1.3.</span> <span class="nav-text">List&#x2F; Set &#x2F;Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.4.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedList"><span class="nav-number">1.5.</span> <span class="nav-text">LinkedList</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6"><span class="nav-number">1.</span> <span class="nav-text">Java集合框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterable-%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.1.</span> <span class="nav-text">Iterable 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection-%E7%B1%BB%E9%9B%86%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.2.</span> <span class="nav-text">Collection 类集接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List-Set-Map"><span class="nav-number">1.3.</span> <span class="nav-text">List&#x2F; Set &#x2F;Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.4.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedList"><span class="nav-number">1.5.</span> <span class="nav-text">LinkedList</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -566,15 +556,15 @@
     }
   }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=EKlO641Url0aKl5cNNB0i3Gx-gzGzoHsz')
+  fetch('https://app-router.leancloud.cn/2/route?appId=N6TK2DiHOdrE3VtV0Ip0MgJG-MdYXbMMI')
     .then(response => response.json())
     .then(({ api_server }) => {
       var Counter = (method, url, data) => {
         return fetch(`https://${api_server}/1.1${url}`, {
           method,
           headers: {
-            'X-LC-Id'     : 'EKlO641Url0aKl5cNNB0i3Gx-gzGzoHsz',
-            'X-LC-Key'    : 'cx02Dd7L58HDFlr1uVbUcaYR😀',
+            'X-LC-Id'     : 'N6TK2DiHOdrE3VtV0Ip0MgJG-MdYXbMMI',
+            'X-LC-Key'    : 'cx02Dd7L58HDFlr1uVbUcaYR',
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)
