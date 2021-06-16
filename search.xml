@@ -24,27 +24,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Map学习</title>
-    <url>/2018/03/26/Map%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="Map学习手记"><a href="#Map学习手记" class="headerlink" title="Map学习手记"></a>Map学习手记</h1><h2 id="Map结构特性"><a href="#Map结构特性" class="headerlink" title="Map结构特性."></a>Map结构特性.</h2><h2 id="实现类"><a href="#实现类" class="headerlink" title="实现类"></a>实现类</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
-<li>HashMap类是基于哈希表的map接口的实现,并且允许使用null键和null值</li>
-<li>HashMap实现了Map并扩展了AbstractMap类,本身并没有增加新的方法</li>
-<li>散列映射不保证元素的顺序,元素加入容器的顺序和读取的顺序可能并不相同,而且<strong>不保证</strong>顺序是<strong>恒久不变</strong>的<h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4></li>
-</ul>
-<span id="more"></span>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">HapMap();</span><br><span class="line">HapMap(Map m);</span><br><span class="line">HapMap(<span class="keyword">int</span> capacity);</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Constructs an empty &lt;tt&gt;HashMap&lt;/tt&gt; with the specified initial</span></span><br><span class="line"><span class="comment"> * capacity and load factor.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>  initialCapacity the initial capacity   初始化的容量</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>  loadFactor      the load factor  扩展因子  TODO待理解</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> IllegalArgumentException if the initial capacity is negative</span></span><br><span class="line"><span class="comment"> *         or the load factor is nonpositive</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">HapMap(<span class="keyword">int</span> capacity,<span class="keyword">float</span> loadFactor);</span><br></pre></td></tr></table></figure>
-<h4 id="关键函数"><a href="#关键函数" class="headerlink" title="关键函数"></a>关键函数</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">get</span><span class="params">(Object key)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">remove</span><span class="params">(Object key)</span> </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Set&lt;K&gt; <span class="title">keySet</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> Set&lt;Entry&lt;K,V&gt;&gt; <span class="title">entrySet</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-<p><img src="http://img.yunxf.net/HashMap-put-method.png" alt="hashmap put method"></p>
-]]></content>
-      <categories>
-        <category>JDK</category>
-      </categories>
-      <tags>
-        <tag>JDK</tag>
-        <tag>手记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MongoDB入门教程</title>
     <url>/2019/03/17/MongoDB%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<p>突发奇想,想要在家里的笔记本上安装个MongoDB,平时偶尔能用一下来进行测试,既然笔记本上有Docker环境,当然要利用起来了</p>
@@ -79,6 +58,62 @@
       <tags>
         <tag>Docker</tag>
         <tag>MongoDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Map学习</title>
+    <url>/2018/03/26/Map%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="Map学习手记"><a href="#Map学习手记" class="headerlink" title="Map学习手记"></a>Map学习手记</h1><h2 id="Map结构特性"><a href="#Map结构特性" class="headerlink" title="Map结构特性."></a>Map结构特性.</h2><h2 id="实现类"><a href="#实现类" class="headerlink" title="实现类"></a>实现类</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>HashMap类是基于哈希表的map接口的实现,并且允许使用null键和null值</li>
+<li>HashMap实现了Map并扩展了AbstractMap类,本身并没有增加新的方法</li>
+<li>散列映射不保证元素的顺序,元素加入容器的顺序和读取的顺序可能并不相同,而且<strong>不保证</strong>顺序是<strong>恒久不变</strong>的<h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4></li>
+</ul>
+<span id="more"></span>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">HapMap();</span><br><span class="line">HapMap(Map m);</span><br><span class="line">HapMap(<span class="keyword">int</span> capacity);</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Constructs an empty &lt;tt&gt;HashMap&lt;/tt&gt; with the specified initial</span></span><br><span class="line"><span class="comment"> * capacity and load factor.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>  initialCapacity the initial capacity   初始化的容量</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>  loadFactor      the load factor  扩展因子  TODO待理解</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> IllegalArgumentException if the initial capacity is negative</span></span><br><span class="line"><span class="comment"> *         or the load factor is nonpositive</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">HapMap(<span class="keyword">int</span> capacity,<span class="keyword">float</span> loadFactor);</span><br></pre></td></tr></table></figure>
+<h4 id="关键函数"><a href="#关键函数" class="headerlink" title="关键函数"></a>关键函数</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">get</span><span class="params">(Object key)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">remove</span><span class="params">(Object key)</span> </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Set&lt;K&gt; <span class="title">keySet</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> Set&lt;Entry&lt;K,V&gt;&gt; <span class="title">entrySet</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p><img src="http://img.yunxf.net/HashMap-put-method.png" alt="hashmap put method"></p>
+]]></content>
+      <categories>
+        <category>JDK</category>
+      </categories>
+      <tags>
+        <tag>JDK</tag>
+        <tag>手记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nginx小记</title>
+    <url>/2017/07/26/Nginx%E5%B0%8F%E8%AE%B0/</url>
+    <content><![CDATA[<p>闲来无聊看看 Nginx .</p>
+<ul>
+<li>操作系统: Ubuntu 14.04</li>
+<li>安装方式: Build source</li>
+<li>安装之前使用./configure 检查是否可以进行安装是否缺少模块</li>
+</ul>
+<span id="more"></span>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/nginx --with-http_ssl_module --with-http_spdy_module --with-http_stub_status_module --with-pcre</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>发生错误:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./configure: error: the HTTP rewrite module requires the PCRE library.</span><br></pre></td></tr></table></figure>
+<p>解决办法:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install libpcre3 libpcre3-dev</span><br></pre></td></tr></table></figure>
+
+<p>然后继续执行./configure 的命令 发现又少东西了~  这次是 openssl</p>
+<p>发生错误:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./configure: error: SSL modules require the OpenSSL library.</span><br></pre></td></tr></table></figure>
+<p>解决办法:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install openssl libssl-dev</span><br></pre></td></tr></table></figure>
+<p>然后继续./configure </p>
+<p>OK 搞定了~  安装吧~</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ make </span><br><span class="line">$ make install</span><br></pre></td></tr></table></figure>
+<p>nginx.conf 配置<br>需求:是想让 nginx 反向代理到本机 node express 启动的一个web 程序上但是想让在解析的时候浏览器输入 localhost8081/express 解析解析到localhost:3000上.</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen       8081;<span class="comment">//监听本机8081端口</span></span><br><span class="line">        server_name  yun.he.he;<span class="comment">//编辑本机 hosts 127.0.0.1解析到 yun.he.he 域名</span></span><br><span class="line">        #root /data/www/yun; <span class="comment">//反向代理后没用</span></span><br><span class="line">        location /express/ &#123; <span class="comment">//解析url 中的/express</span></span><br><span class="line">	    rewrite /express/(.*) /$1 break;  <span class="comment">//重写路径  $1代表前面 小括号内的内容 并且/ express 不进行转发</span></span><br><span class="line">            proxy_pass http:<span class="comment">//10.32.43.42:3000;//讲上面的地址转发到这个 url</span></span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>手记</tag>
+        <tag>Nginx</tag>
       </tags>
   </entry>
   <entry>
@@ -178,41 +213,6 @@
       </categories>
       <tags>
         <tag>diary</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nginx小记</title>
-    <url>/2017/07/26/Nginx%E5%B0%8F%E8%AE%B0/</url>
-    <content><![CDATA[<p>闲来无聊看看 Nginx .</p>
-<ul>
-<li>操作系统: Ubuntu 14.04</li>
-<li>安装方式: Build source</li>
-<li>安装之前使用./configure 检查是否可以进行安装是否缺少模块</li>
-</ul>
-<span id="more"></span>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/nginx --with-http_ssl_module --with-http_spdy_module --with-http_stub_status_module --with-pcre</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>发生错误:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./configure: error: the HTTP rewrite module requires the PCRE library.</span><br></pre></td></tr></table></figure>
-<p>解决办法:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install libpcre3 libpcre3-dev</span><br></pre></td></tr></table></figure>
-
-<p>然后继续执行./configure 的命令 发现又少东西了~  这次是 openssl</p>
-<p>发生错误:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./configure: error: SSL modules require the OpenSSL library.</span><br></pre></td></tr></table></figure>
-<p>解决办法:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install openssl libssl-dev</span><br></pre></td></tr></table></figure>
-<p>然后继续./configure </p>
-<p>OK 搞定了~  安装吧~</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ make </span><br><span class="line">$ make install</span><br></pre></td></tr></table></figure>
-<p>nginx.conf 配置<br>需求:是想让 nginx 反向代理到本机 node express 启动的一个web 程序上但是想让在解析的时候浏览器输入 localhost8081/express 解析解析到localhost:3000上.</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen       8081;<span class="comment">//监听本机8081端口</span></span><br><span class="line">        server_name  yun.he.he;<span class="comment">//编辑本机 hosts 127.0.0.1解析到 yun.he.he 域名</span></span><br><span class="line">        #root /data/www/yun; <span class="comment">//反向代理后没用</span></span><br><span class="line">        location /express/ &#123; <span class="comment">//解析url 中的/express</span></span><br><span class="line">	    rewrite /express/(.*) /$1 break;  <span class="comment">//重写路径  $1代表前面 小括号内的内容 并且/ express 不进行转发</span></span><br><span class="line">            proxy_pass http:<span class="comment">//10.32.43.42:3000;//讲上面的地址转发到这个 url</span></span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>服务器</category>
-      </categories>
-      <tags>
-        <tag>手记</tag>
-        <tag>Nginx</tag>
       </tags>
   </entry>
   <entry>
