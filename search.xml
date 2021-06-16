@@ -117,105 +117,6 @@
       </tags>
   </entry>
   <entry>
-    <title>从头装一次Macbook pro 2019</title>
-    <url>/2020/02/23/build-new-macbook-pro/</url>
-    <content><![CDATA[<h1 id="我的新电脑装了哪些软件"><a href="#我的新电脑装了哪些软件" class="headerlink" title="我的新电脑装了哪些软件"></a>我的新电脑装了哪些软件</h1><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><ul>
-<li>Chrome<ul>
-<li>登录个人账户,同步插件和设置,密码等信息.</li>
-</ul>
-</li>
-<li>Typro  最好用的markdown编辑器</li>
-<li>搜狗输入发</li>
-<li>V2rayX 你懂得</li>
-<li>Iterm2<ul>
-<li>oh-my-zsh 需要安装苹果自带的工具, 里面含有git</li>
-</ul>
-</li>
-<li>Alfred4.0.4 (原谅我可耻的使用了破解版)<span id="more"></span></li>
-<li>安装Mac 神器 Homebrew<ul>
-<li>git</li>
-<li>git-flow-avh</li>
-<li>maven</li>
-<li>node@12 暂缓</li>
-<li>telnet / wget </li>
-<li>htop</li>
-</ul>
-</li>
-<li>JDK8</li>
-<li>WPS 这个大家都懂, 在mac上的Office 实在是…太难用了</li>
-<li>vs code( Visual Studio Code) <ul>
-<li>Plugin  Chinese Language Pack </li>
-<li>json Tools</li>
-<li>XML tools</li>
-<li>YAML </li>
-</ul>
-</li>
-<li>Intellj </li>
-<li>百度网盘</li>
-<li>Transmit.app (FTP工具)</li>
-<li>IINA 用起来还不错的播放器</li>
-<li>Parallels Desktop for Mac  (没办法, 所在单位必须用windows)<ul>
-<li>安装windows 10 专业版 x64</li>
-</ul>
-</li>
-<li>安装窗口管理软件 SizeUp</li>
-<li>截图软件  “截图” </li>
-<li>印象笔记</li>
-<li>微软TODO</li>
-<li>Bartender for Mac (用于管理导航栏小图标)</li>
-<li>docker <ul>
-<li>修改docker for mac 的镜像下载地址</li>
-</ul>
-</li>
-<li>安装博客软件hexo</li>
-</ul>
-<h3 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h3><ul>
-<li><p>键盘:</p>
-<ul>
-<li>系统-&gt;键盘-&gt;重复前延迟 , 调整到合适的时间.</li>
-</ul>
-</li>
-<li><p>关闭SIP</p>
-<ul>
-<li>重启电脑.</li>
-<li>开机使用Comand+R进入</li>
-<li>使用terminal 并且执行命令<code>csrutil status</code> 检查SIP状况</li>
-<li><code>System Integrity Protection status: enabled.</code> 或者<code>System Integrity Protection status: disable</code></li>
-<li>执行命令<code>csrutil disable</code> 关闭SIP</li>
-</ul>
-</li>
-<li><p>允许任何来源软件</p>
-<ul>
-<li>执行命令<code>sudo spctl --master-disable</code></li>
-</ul>
-</li>
-<li><p>安装git repository 管理插件. </p>
-<ul>
-<li><code>npm install projj -g</code></li>
-</ul>
-</li>
-<li><p>修改iterm2中的vim 配色方案</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vimrc</span></span><br><span class="line"><span class="meta">#</span><span class="bash">编辑一下内容</span></span><br><span class="line">syntax enable</span><br><span class="line">set background=dark</span><br><span class="line">colorscheme Tomorrow-Night</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vim/coclors</span></span><br><span class="line"><span class="meta">#</span><span class="bash">拷贝原有配色方案 Tomorrow-Night.vim 到目录下</span></span><br></pre></td></tr></table></figure></li>
-<li><p>配置hexo的相关地址</p>
-</li>
-<li><p>设置Mac Dock 隐藏/显示的时间延迟,默认将鼠标移动到Dock位置会有一定时间的延迟.</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.Dock autohide-delay -float 0 &amp;&amp; killall Dock</span><br><span class="line"><span class="meta">#</span><span class="bash">如果想要恢复</span></span><br><span class="line">defaults delete com.apple.Dock autohide-delay &amp;&amp; killall Dock</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="数据迁移"><a href="#数据迁移" class="headerlink" title="数据迁移"></a>数据迁移</h3><ul>
-<li>maven本地包迁移</li>
-<li>迁移原有代码仓库</li>
-<li>迁移工作用文档</li>
-<li>迁移原有ssh 私钥公钥</li>
-</ul>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>diary</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GraphQL的探索上手</title>
     <url>/2020/03/29/graphQL-initialize/</url>
     <content><![CDATA[<h3 id="一-GraphQL简介"><a href="#一-GraphQL简介" class="headerlink" title="一 GraphQL简介"></a>一 GraphQL简介</h3><ol>
@@ -372,32 +273,102 @@
       </tags>
   </entry>
   <entry>
-    <title>设计模式学习一</title>
-    <url>/2018/03/19/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="设计模式模式学习"><a href="#设计模式模式学习" class="headerlink" title="设计模式模式学习"></a>设计模式模式学习</h1><p>//TODO</p>
-<h2 id="设计模式–迭代器模式"><a href="#设计模式–迭代器模式" class="headerlink" title="设计模式–迭代器模式"></a>设计模式–迭代器模式</h2><p>迭代器模式（Iterator），提供一种方法顺序访问一个聚合对象中的各种元素，而又不暴露该对象的内部表示。</p>
-<p>最近在看List/ArrayList/LinkedList,明白了底层的实现方式,就在想,是不是自己可以也模仿写一个简单的ArrayList</p>
-<span id="more"></span>
-<p><img src="http://img.yunxf.net/iterator-img-class.png" alt="类图"></p>
-<h2 id="设计模式–策略模式"><a href="#设计模式–策略模式" class="headerlink" title="设计模式–策略模式"></a>设计模式–策略模式</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><blockquote>
-<p><strong>策略模式</strong>定义了算法族,分别封装起来.让他们之间可以互相替换,这个模式让算法的变化可以独立于使用算法的客户</p>
-</blockquote>
-<p>如果有个简单的需求,有一个鸭子,所有鸭子都是会游泳的,可以叫.可以飞,可以展示自己羽毛的颜色.<br>大家都知道,有一个Duck的抽象类.继承自抽象类的鸭子又可以自定义自己的display()方法来展示自己羽毛的颜色.<br>下面是一个简单的鸭子(Duck)的抽象类.</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Duck</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 飞行行为的接口</span></span><br><span class="line"><span class="comment">    * 当符合飞行行为的接口的时候都可以使用不管是坐着火箭飞行,还是扇着翅膀飞行</span></span><br><span class="line"><span class="comment">    **/</span></span><br><span class="line">    <span class="keyword">private</span> FlyBehavior flyBehavior;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 喊叫行为的接口</span></span><br><span class="line"><span class="comment">    * 当符合喊叫行为接口的都可以放进来,不管是gaga 还是吱吱叫</span></span><br><span class="line"><span class="comment">    **/</span></span><br><span class="line">    <span class="keyword">private</span> CallBehavior callBehavior;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Duck</span><span class="params">(FlyBehavior flyBehavior, CallBehavior callBehavior)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.flyBehavior = flyBehavior;</span><br><span class="line">        <span class="keyword">this</span>.callBehavior = callBehavior;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Duck() &#123;</span><br><span class="line">        <span class="keyword">this</span>.flyBehavior = <span class="keyword">new</span> DefaultFlyBehavior();</span><br><span class="line">        <span class="keyword">this</span>.callBehavior = <span class="keyword">new</span> DefaultCallBehavior();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 展示自己</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 可以游泳</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">swim</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Duck can swim&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 飞行的方法,但是具体的实现不知道是谁</span></span><br><span class="line"><span class="comment">     * 在构造方法的时候确定&quot;飞行这个行为是怎么做的;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">fly</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span>  <span class="keyword">this</span>.flyBehavior.fly();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 鸭子叫的行为,但是这个行为不知道具体是怎么喊叫的.</span></span><br><span class="line"><span class="comment">     * 只有在真正的行为实现上才知道</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">call</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.callBehavior.call();</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 在使用中动态的改变飞行的具体实现</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> flyBehavior</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFlyBehavior</span><span class="params">(DefaultFlyBehavior flyBehavior)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.flyBehavior = flyBehavior;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 在鸭子使用中动态的定义鸭子叫声 可能是吱吱 或者嘎嘎</span></span><br><span class="line"><span class="comment">     * 只要是实现了CallBehavior接口的都可以</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> callBehavior</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCallBehavior</span><span class="params">(CallBehavior callBehavior)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.callBehavior = callBehavior;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 黄色的鸭子,这个黄色的鸭子使用默认的飞行(fly)和叫(call)的行为</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YellowDuck</span> <span class="keyword">extends</span> <span class="title">Duck</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">YellowDuck</span><span class="params">(FlyBehavior flyBehavior, CallBehavior callBehavior)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(flyBehavior, callBehavior);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">YellowDuck</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot; I&#x27;m a Yellow Duck&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="设计模式–观察者模式"><a href="#设计模式–观察者模式" class="headerlink" title="设计模式–观察者模式"></a>设计模式–观察者模式</h2><h3 id="基本理念"><a href="#基本理念" class="headerlink" title="基本理念"></a>基本理念</h3><ul>
-<li>超出程序中变化的部分,然后将这些和固定不变的部分分离开</li>
-<li>针对接口编程,不针对实现编程</li>
-<li>多用组合少用继承.</li>
+    <title>从头装一次Macbook pro 2019</title>
+    <url>/2020/02/23/build-new-macbook-pro/</url>
+    <content><![CDATA[<h1 id="我的新电脑装了哪些软件"><a href="#我的新电脑装了哪些软件" class="headerlink" title="我的新电脑装了哪些软件"></a>我的新电脑装了哪些软件</h1><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><ul>
+<li>Chrome<ul>
+<li>登录个人账户,同步插件和设置,密码等信息.</li>
+</ul>
+</li>
+<li>Typro  最好用的markdown编辑器</li>
+<li>搜狗输入发</li>
+<li>V2rayX 你懂得</li>
+<li>Iterm2<ul>
+<li>oh-my-zsh 需要安装苹果自带的工具, 里面含有git</li>
+</ul>
+</li>
+<li>Alfred4.0.4 (原谅我可耻的使用了破解版)<span id="more"></span></li>
+<li>安装Mac 神器 Homebrew<ul>
+<li>git</li>
+<li>git-flow-avh</li>
+<li>maven</li>
+<li>node@12 暂缓</li>
+<li>telnet / wget </li>
+<li>htop</li>
+</ul>
+</li>
+<li>JDK8</li>
+<li>WPS 这个大家都懂, 在mac上的Office 实在是…太难用了</li>
+<li>vs code( Visual Studio Code) <ul>
+<li>Plugin  Chinese Language Pack </li>
+<li>json Tools</li>
+<li>XML tools</li>
+<li>YAML </li>
+</ul>
+</li>
+<li>Intellj </li>
+<li>百度网盘</li>
+<li>Transmit.app (FTP工具)</li>
+<li>IINA 用起来还不错的播放器</li>
+<li>Parallels Desktop for Mac  (没办法, 所在单位必须用windows)<ul>
+<li>安装windows 10 专业版 x64</li>
+</ul>
+</li>
+<li>安装窗口管理软件 SizeUp</li>
+<li>截图软件  “截图” </li>
+<li>印象笔记</li>
+<li>微软TODO</li>
+<li>Bartender for Mac (用于管理导航栏小图标)</li>
+<li>docker <ul>
+<li>修改docker for mac 的镜像下载地址</li>
+</ul>
+</li>
+<li>安装博客软件hexo</li>
+</ul>
+<h3 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h3><ul>
+<li><p>键盘:</p>
+<ul>
+<li>系统-&gt;键盘-&gt;重复前延迟 , 调整到合适的时间.</li>
+</ul>
+</li>
+<li><p>关闭SIP</p>
+<ul>
+<li>重启电脑.</li>
+<li>开机使用Comand+R进入</li>
+<li>使用terminal 并且执行命令<code>csrutil status</code> 检查SIP状况</li>
+<li><code>System Integrity Protection status: enabled.</code> 或者<code>System Integrity Protection status: disable</code></li>
+<li>执行命令<code>csrutil disable</code> 关闭SIP</li>
+</ul>
+</li>
+<li><p>允许任何来源软件</p>
+<ul>
+<li>执行命令<code>sudo spctl --master-disable</code></li>
+</ul>
+</li>
+<li><p>安装git repository 管理插件. </p>
+<ul>
+<li><code>npm install projj -g</code></li>
+</ul>
+</li>
+<li><p>修改iterm2中的vim 配色方案</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vimrc</span></span><br><span class="line"><span class="meta">#</span><span class="bash">编辑一下内容</span></span><br><span class="line">syntax enable</span><br><span class="line">set background=dark</span><br><span class="line">colorscheme Tomorrow-Night</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">创建 ~/.vim/coclors</span></span><br><span class="line"><span class="meta">#</span><span class="bash">拷贝原有配色方案 Tomorrow-Night.vim 到目录下</span></span><br></pre></td></tr></table></figure></li>
+<li><p>配置hexo的相关地址</p>
+</li>
+<li><p>设置Mac Dock 隐藏/显示的时间延迟,默认将鼠标移动到Dock位置会有一定时间的延迟.</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.Dock autohide-delay -float 0 &amp;&amp; killall Dock</span><br><span class="line"><span class="meta">#</span><span class="bash">如果想要恢复</span></span><br><span class="line">defaults delete com.apple.Dock autohide-delay &amp;&amp; killall Dock</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="数据迁移"><a href="#数据迁移" class="headerlink" title="数据迁移"></a>数据迁移</h3><ul>
+<li>maven本地包迁移</li>
+<li>迁移原有代码仓库</li>
+<li>迁移工作用文档</li>
+<li>迁移原有ssh 私钥公钥</li>
 </ul>
 ]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>生活</category>
       </categories>
       <tags>
-        <tag>JDK</tag>
-        <tag>手记</tag>
-        <tag>设计模式</tag>
+        <tag>diary</tag>
       </tags>
   </entry>
   <entry>
@@ -464,6 +435,35 @@
       <tags>
         <tag>JDK</tag>
         <tag>手记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>设计模式学习一</title>
+    <url>/2018/03/19/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="设计模式模式学习"><a href="#设计模式模式学习" class="headerlink" title="设计模式模式学习"></a>设计模式模式学习</h1><p>//TODO</p>
+<h2 id="设计模式–迭代器模式"><a href="#设计模式–迭代器模式" class="headerlink" title="设计模式–迭代器模式"></a>设计模式–迭代器模式</h2><p>迭代器模式（Iterator），提供一种方法顺序访问一个聚合对象中的各种元素，而又不暴露该对象的内部表示。</p>
+<p>最近在看List/ArrayList/LinkedList,明白了底层的实现方式,就在想,是不是自己可以也模仿写一个简单的ArrayList</p>
+<span id="more"></span>
+<p><img src="http://img.yunxf.net/iterator-img-class.png" alt="类图"></p>
+<h2 id="设计模式–策略模式"><a href="#设计模式–策略模式" class="headerlink" title="设计模式–策略模式"></a>设计模式–策略模式</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><blockquote>
+<p><strong>策略模式</strong>定义了算法族,分别封装起来.让他们之间可以互相替换,这个模式让算法的变化可以独立于使用算法的客户</p>
+</blockquote>
+<p>如果有个简单的需求,有一个鸭子,所有鸭子都是会游泳的,可以叫.可以飞,可以展示自己羽毛的颜色.<br>大家都知道,有一个Duck的抽象类.继承自抽象类的鸭子又可以自定义自己的display()方法来展示自己羽毛的颜色.<br>下面是一个简单的鸭子(Duck)的抽象类.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Duck</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 飞行行为的接口</span></span><br><span class="line"><span class="comment">    * 当符合飞行行为的接口的时候都可以使用不管是坐着火箭飞行,还是扇着翅膀飞行</span></span><br><span class="line"><span class="comment">    **/</span></span><br><span class="line">    <span class="keyword">private</span> FlyBehavior flyBehavior;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 喊叫行为的接口</span></span><br><span class="line"><span class="comment">    * 当符合喊叫行为接口的都可以放进来,不管是gaga 还是吱吱叫</span></span><br><span class="line"><span class="comment">    **/</span></span><br><span class="line">    <span class="keyword">private</span> CallBehavior callBehavior;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Duck</span><span class="params">(FlyBehavior flyBehavior, CallBehavior callBehavior)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.flyBehavior = flyBehavior;</span><br><span class="line">        <span class="keyword">this</span>.callBehavior = callBehavior;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Duck() &#123;</span><br><span class="line">        <span class="keyword">this</span>.flyBehavior = <span class="keyword">new</span> DefaultFlyBehavior();</span><br><span class="line">        <span class="keyword">this</span>.callBehavior = <span class="keyword">new</span> DefaultCallBehavior();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 展示自己</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 可以游泳</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">swim</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Duck can swim&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 飞行的方法,但是具体的实现不知道是谁</span></span><br><span class="line"><span class="comment">     * 在构造方法的时候确定&quot;飞行这个行为是怎么做的;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">fly</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span>  <span class="keyword">this</span>.flyBehavior.fly();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 鸭子叫的行为,但是这个行为不知道具体是怎么喊叫的.</span></span><br><span class="line"><span class="comment">     * 只有在真正的行为实现上才知道</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">call</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.callBehavior.call();</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 在使用中动态的改变飞行的具体实现</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> flyBehavior</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFlyBehavior</span><span class="params">(DefaultFlyBehavior flyBehavior)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.flyBehavior = flyBehavior;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 在鸭子使用中动态的定义鸭子叫声 可能是吱吱 或者嘎嘎</span></span><br><span class="line"><span class="comment">     * 只要是实现了CallBehavior接口的都可以</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> callBehavior</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCallBehavior</span><span class="params">(CallBehavior callBehavior)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.callBehavior = callBehavior;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 黄色的鸭子,这个黄色的鸭子使用默认的飞行(fly)和叫(call)的行为</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YellowDuck</span> <span class="keyword">extends</span> <span class="title">Duck</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">YellowDuck</span><span class="params">(FlyBehavior flyBehavior, CallBehavior callBehavior)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(flyBehavior, callBehavior);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">YellowDuck</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot; I&#x27;m a Yellow Duck&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="设计模式–观察者模式"><a href="#设计模式–观察者模式" class="headerlink" title="设计模式–观察者模式"></a>设计模式–观察者模式</h2><h3 id="基本理念"><a href="#基本理念" class="headerlink" title="基本理念"></a>基本理念</h3><ul>
+<li>超出程序中变化的部分,然后将这些和固定不变的部分分离开</li>
+<li>针对接口编程,不针对实现编程</li>
+<li>多用组合少用继承.</li>
+</ul>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>JDK</tag>
+        <tag>手记</tag>
+        <tag>设计模式</tag>
       </tags>
   </entry>
 </search>
