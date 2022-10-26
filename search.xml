@@ -24,43 +24,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MongoDB入门教程</title>
-    <url>/2019/03/17/MongoDB%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>突发奇想,想要在家里的笔记本上安装个MongoDB,平时偶尔能用一下来进行测试,既然笔记本上有Docker环境,当然要利用起来了</p>
-<span id="more"></span>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin  -d mongo --auth --authenticationDatabase heheda</span><br></pre></td></tr></table></figure>
-<ul>
-<li>使用认证方式登录MongoDB <strong>–auth</strong> .</li>
-<li>管理员用户名 <strong>MONGO_INITDB_ROOT_USERNAME</strong> 设置</li>
-<li>管理员用户名密码 <strong>MONGO_INITDB_ROOT_PASSWORD</strong> 设置</li>
-</ul>
-<p>现在你有了一个管理员账户,但是对于不同的数据库,要使用不同的用户,怎么控制呢? </p>
-<p>Let’s get it ,我现在需要一个demo数据库,并且需要一个用户对demo数据库有完全管理权限.用户名和密码就都是demo吧</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; mongo 192.168.123.123:27017/admin -u admin -p admin</span><br><span class="line">&gt; use demo</span><br><span class="line">switched to db demo</span><br><span class="line">&gt; db.createUser(&#123;user:<span class="string">&quot;demo&quot;</span>,<span class="built_in">pwd</span>:<span class="string">&quot;demo&quot;</span>,roles:[&#123;<span class="string">&quot;role&quot;</span>:<span class="string">&quot;dbAdmin&quot;</span>,<span class="string">&quot;db&quot;</span>:<span class="string">&quot;demo&quot;</span>&#125;]&#125;)</span><br><span class="line">Successfully added user: &#123;</span><br><span class="line">	<span class="string">&quot;user&quot;</span> : <span class="string">&quot;demo&quot;</span>,</span><br><span class="line">	<span class="string">&quot;roles&quot;</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">&quot;role&quot;</span> : <span class="string">&quot;dbAdmin&quot;</span>,</span><br><span class="line">			<span class="string">&quot;db&quot;</span> : <span class="string">&quot;demo&quot;</span></span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>登录到Docker上的mongo server ,我使用本地装好的mongo client ,<code>use demo</code>选择一个数据库,这样也就是创建了一个数据库,<code>createUser</code>在demo数据库下,创建了一个demo用户,用户名密码都是demo.<code>&#123;&quot;role&quot;:&quot;dbAdmin&quot;,&quot;db&quot;:&quot;demo&quot;&#125;</code> dbAdmin: 数据库管理员,具体有什么权限参照下面</p>
-<ul>
-<li>read:允许用户读取指定数据库 </li>
-<li>readWrite:允许用户读写指定数据库 </li>
-<li>dbAdmin：允许用户在指定数据库中执行管理函数，如索引创建、删除，查看统计或访问system.profile </li>
-<li>userAdmin：允许用户向system.users集合写入，可以找指定数据库里创建、删除和管理用户 </li>
-<li>clusterAdmin：只在admin数据库中可用，赋予用户所有分片和复制集相关函数的管理权限。 </li>
-<li>readAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的读权限 </li>
-<li>readWriteAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的读写权限 </li>
-<li>userAdminAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的userAdmin权限 </li>
-<li>dbAdminAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的dbAdmin权限。 </li>
-<li>root：只在admin数据库中可用。超级账号，超级权限</li>
-</ul>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>MongoDB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Map学习</title>
     <url>/2018/03/26/Map%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="Map学习手记"><a href="#Map学习手记" class="headerlink" title="Map学习手记"></a>Map学习手记</h1><h2 id="Map结构特性"><a href="#Map结构特性" class="headerlink" title="Map结构特性."></a>Map结构特性.</h2><h2 id="实现类"><a href="#实现类" class="headerlink" title="实现类"></a>实现类</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
@@ -114,6 +77,43 @@
       <tags>
         <tag>手记</tag>
         <tag>Nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MongoDB入门教程</title>
+    <url>/2019/03/17/MongoDB%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>突发奇想,想要在家里的笔记本上安装个MongoDB,平时偶尔能用一下来进行测试,既然笔记本上有Docker环境,当然要利用起来了</p>
+<span id="more"></span>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin  -d mongo --auth --authenticationDatabase heheda</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用认证方式登录MongoDB <strong>–auth</strong> .</li>
+<li>管理员用户名 <strong>MONGO_INITDB_ROOT_USERNAME</strong> 设置</li>
+<li>管理员用户名密码 <strong>MONGO_INITDB_ROOT_PASSWORD</strong> 设置</li>
+</ul>
+<p>现在你有了一个管理员账户,但是对于不同的数据库,要使用不同的用户,怎么控制呢? </p>
+<p>Let’s get it ,我现在需要一个demo数据库,并且需要一个用户对demo数据库有完全管理权限.用户名和密码就都是demo吧</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; mongo 192.168.123.123:27017/admin -u admin -p admin</span><br><span class="line">&gt; use demo</span><br><span class="line">switched to db demo</span><br><span class="line">&gt; db.createUser(&#123;user:<span class="string">&quot;demo&quot;</span>,<span class="built_in">pwd</span>:<span class="string">&quot;demo&quot;</span>,roles:[&#123;<span class="string">&quot;role&quot;</span>:<span class="string">&quot;dbAdmin&quot;</span>,<span class="string">&quot;db&quot;</span>:<span class="string">&quot;demo&quot;</span>&#125;]&#125;)</span><br><span class="line">Successfully added user: &#123;</span><br><span class="line">	<span class="string">&quot;user&quot;</span> : <span class="string">&quot;demo&quot;</span>,</span><br><span class="line">	<span class="string">&quot;roles&quot;</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">&quot;role&quot;</span> : <span class="string">&quot;dbAdmin&quot;</span>,</span><br><span class="line">			<span class="string">&quot;db&quot;</span> : <span class="string">&quot;demo&quot;</span></span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>登录到Docker上的mongo server ,我使用本地装好的mongo client ,<code>use demo</code>选择一个数据库,这样也就是创建了一个数据库,<code>createUser</code>在demo数据库下,创建了一个demo用户,用户名密码都是demo.<code>&#123;&quot;role&quot;:&quot;dbAdmin&quot;,&quot;db&quot;:&quot;demo&quot;&#125;</code> dbAdmin: 数据库管理员,具体有什么权限参照下面</p>
+<ul>
+<li>read:允许用户读取指定数据库 </li>
+<li>readWrite:允许用户读写指定数据库 </li>
+<li>dbAdmin：允许用户在指定数据库中执行管理函数，如索引创建、删除，查看统计或访问system.profile </li>
+<li>userAdmin：允许用户向system.users集合写入，可以找指定数据库里创建、删除和管理用户 </li>
+<li>clusterAdmin：只在admin数据库中可用，赋予用户所有分片和复制集相关函数的管理权限。 </li>
+<li>readAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的读权限 </li>
+<li>readWriteAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的读写权限 </li>
+<li>userAdminAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的userAdmin权限 </li>
+<li>dbAdminAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的dbAdmin权限。 </li>
+<li>root：只在admin数据库中可用。超级账号，超级权限</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>MongoDB</tag>
       </tags>
   </entry>
   <entry>
@@ -435,6 +435,20 @@
       <tags>
         <tag>JDK</tag>
         <tag>手记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>北京金秋游记录</title>
+    <url>/2022/10/26/%E5%8C%97%E4%BA%AC%E9%87%91%E7%A7%8B%E6%B8%B8%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h3 id="时间-2022年10月23日-出游"><a href="#时间-2022年10月23日-出游" class="headerlink" title="时间 2022年10月23日 出游"></a>时间 2022年10月23日 出游</h3><p><img src="http://img.yunxf.net//%E7%A6%8F%E4%B8%89%E5%92%96%E5%95%A1" alt="福三咖啡"></p>
+<span id="more"></span>
+<p><img src="http://img.yunxf.net//%E9%87%91%E7%A7%8B%E5%87%BA%E6%B8%B801" alt="小区门口的马路"><br><img src="http://img.yunxf.net//%E5%9B%BD%E8%B4%B864%E5%B1%82" alt="国贸64层"><br><img src="http://img.yunxf.net//%E4%B8%89%E9%87%8C%E5%B1%AF%E8%8B%B9%E6%9E%9C%E5%BA%97" alt="三里屯苹果店"></p>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>diary</tag>
       </tags>
   </entry>
   <entry>
