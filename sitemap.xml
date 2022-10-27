@@ -123,6 +123,13 @@
   </url>
   
   <url>
+    <loc>http://www.yunxf.me/tags/MongoDB/</loc>
+    <lastmod>2022-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.yunxf.me/tags/Nginx/</loc>
     <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -130,7 +137,7 @@
   </url>
   
   <url>
-    <loc>http://www.yunxf.me/tags/MongoDB/</loc>
+    <loc>http://www.yunxf.me/tags/diary/</loc>
     <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -145,13 +152,6 @@
   
   <url>
     <loc>http://www.yunxf.me/tags/GraphQL/</loc>
-    <lastmod>2022-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.yunxf.me/tags/diary/</loc>
     <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -181,13 +181,6 @@
   </url>
   
   <url>
-    <loc>http://www.yunxf.me/categories/server/</loc>
-    <lastmod>2022-10-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.yunxf.me/categories/DB/</loc>
     <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
@@ -203,6 +196,13 @@
   
   <url>
     <loc>http://www.yunxf.me/categories/life/</loc>
+    <lastmod>2022-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.yunxf.me/categories/server/</loc>
     <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
