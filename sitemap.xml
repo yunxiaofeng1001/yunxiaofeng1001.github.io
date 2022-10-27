@@ -88,7 +88,7 @@
 
   <url>
     <loc>http://www.yunxf.me/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -96,70 +96,70 @@
   
   <url>
     <loc>http://www.yunxf.me/tags/Docker/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.yunxf.me/tags/DevOps/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.yunxf.me/tags/JDK/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.yunxf.me/tags/diary/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.yunxf.me/tags/Nginx/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.yunxf.me/tags/MongoDB/</loc>
-    <lastmod>2022-10-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.yunxf.me/tags/diary/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.yunxf.me/tags/Spring-boot/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.yunxf.me/tags/GraphQL/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.yunxf.me/tags/diary/</loc>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.yunxf.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -168,49 +168,49 @@
   
   <url>
     <loc>http://www.yunxf.me/categories/Docker/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.yunxf.me/categories/JDK/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.yunxf.me/categories/server/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.yunxf.me/categories/DB/</loc>
-    <lastmod>2022-10-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.yunxf.me/categories/life/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.yunxf.me/categories/server/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.yunxf.me/categories/life/</loc>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.yunxf.me/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
