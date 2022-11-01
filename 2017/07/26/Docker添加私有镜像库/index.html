@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 6.3.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -268,12 +268,12 @@
 </code></pre>
 <span id="more"></span>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;je&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;je&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//修改这个文件.</span><br><span class="line">$ /etc/defaults/docker</span><br><span class="line">DOCKER_OPTS=<span class="string">&quot;<span class="variable">$DOCKER_OPTS</span> --registry-mirror=registry.domain.org&quot;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">registry.domain.org/elk/elasticsearch:latest</span><br><span class="line">Error response from daemon: invalid registry endpoint https://registry.domain.org/v0/: unable to ping registry endpoint https://registry.domain.org/v0/</span><br><span class="line">v2 ping attempt failed with error: Get https://registry.domain.org/v2/: x509: certificate signed by unknown authority</span><br><span class="line">v1 ping attempt failed with error: Get https://registry.domain.org/v1/_ping: x509: certificate signed by unknown authority. If this private registry supports only HTTP or HTTPS with an unknown CA certificate, please add `--insecure-registry registry.domain.org` to the daemon<span class="string">&#x27;s arguments. In the case of HTTPS, if you have access to the registry&#x27;</span>s CA certificate, no need <span class="keyword">for</span> the flag; simply place the CA certificate at /etc/docker/certs.d/registry.domain.org/ca.crt</span><br></pre></td></tr></table></figure>
 
 
-<p>上面写的很明白了~ https~ 但是我没有证书.翻箱倒柜.终于找到当初生成的证书…但是需要放在/etc/docker/certs.d/registry.domain.org/目录下的 ca.crt文件<br>这里貌似必须用 root 用户新建这个文件.然后拷贝你的证书内容进去,别问我为什么.我也不知道…</p>
+<p>上面写的很明白了~ https~ 但是我没有证书.翻箱倒柜.终于找到当初生成的证书…但是需要放在&#x2F;etc&#x2F;docker&#x2F;certs.d&#x2F;registry.domain.org&#x2F;目录下的 ca.crt文件<br>这里貌似必须用 root 用户新建这个文件.然后拷贝你的证书内容进去,别问我为什么.我也不知道…</p>
 <p>捂脸望天</p>
 
     </div>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 6.3.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -268,26 +268,26 @@
 <ul>
 <li>操作系统: Ubuntu 14.04</li>
 <li>安装方式: Build source</li>
-<li>安装之前使用./configure 检查是否可以进行安装是否缺少模块</li>
+<li>安装之前使用.&#x2F;configure 检查是否可以进行安装是否缺少模块</li>
 </ul>
 <span id="more"></span>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/nginx --with-http_ssl_module --with-http_spdy_module --with-http_stub_status_module --with-pcre</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-http_spdy_module --with-http_stub_status_module --with-pcre</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>发生错误:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./configure: error: the HTTP rewrite module requires the PCRE library.</span><br></pre></td></tr></table></figure>
 <p>解决办法:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install libpcre3 libpcre3-dev</span><br></pre></td></tr></table></figure>
 
-<p>然后继续执行./configure 的命令 发现又少东西了~  这次是 openssl</p>
+<p>然后继续执行.&#x2F;configure 的命令 发现又少东西了~  这次是 openssl</p>
 <p>发生错误:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./configure: error: SSL modules require the OpenSSL library.</span><br></pre></td></tr></table></figure>
 <p>解决办法:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openssl libssl-dev</span><br></pre></td></tr></table></figure>
-<p>然后继续./configure </p>
+<p>然后继续.&#x2F;configure </p>
 <p>OK 搞定了~  安装吧~</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ make </span><br><span class="line">$ make install</span><br></pre></td></tr></table></figure>
-<p>nginx.conf 配置<br>需求:是想让 nginx 反向代理到本机 node express 启动的一个web 程序上但是想让在解析的时候浏览器输入 localhost8081/express 解析解析到localhost:3000上.</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen       8081;<span class="comment">//监听本机8081端口</span></span><br><span class="line">        server_name  yun.he.he;<span class="comment">//编辑本机 hosts 127.0.0.1解析到 yun.he.he 域名</span></span><br><span class="line">        #root /data/www/yun; <span class="comment">//反向代理后没用</span></span><br><span class="line">        location /express/ &#123; <span class="comment">//解析url 中的/express</span></span><br><span class="line">	    rewrite /express/(.*) /$1 break;  <span class="comment">//重写路径  $1代表前面 小括号内的内容 并且/ express 不进行转发</span></span><br><span class="line">            proxy_pass http:<span class="comment">//10.32.43.42:3000;//讲上面的地址转发到这个 url</span></span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>nginx.conf 配置<br>需求:是想让 nginx 反向代理到本机 node express 启动的一个web 程序上但是想让在解析的时候浏览器输入 localhost8081&#x2F;express 解析解析到localhost:3000上.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server<span class="punctuation">&#123;</span></span><br><span class="line">        listen       <span class="number">8081</span>;<span class="comment">//监听本机8081端口</span></span><br><span class="line">        server_name  yun.he.he;<span class="comment">//编辑本机 hosts 127.0.0.1解析到 yun.he.he 域名</span></span><br><span class="line">        #root /data/www/yun; <span class="comment">//反向代理后没用</span></span><br><span class="line">        location /express/ <span class="punctuation">&#123;</span> <span class="comment">//解析url 中的/express</span></span><br><span class="line">	    rewrite /express/(.*) /$<span class="number">1</span> break;  <span class="comment">//重写路径  $1代表前面 小括号内的内容 并且/ express 不进行转发</span></span><br><span class="line">            proxy_pass http<span class="punctuation">:</span><span class="comment">//10.32.43.42:3000;//讲上面的地址转发到这个 url</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
     </div>
 
     
